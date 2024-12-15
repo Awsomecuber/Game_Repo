@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://pysx7gwlfstt"]
+
+[ext_resource type="PackedScene" uid="uid://cj7rs7lwfg5ln" path="res://Nodes/segment.tscn" id="1_hxuja"]
+[ext_resource type="PackedScene" uid="uid://1eaoj7sgm8n5" path="res://Nodes/player.tscn" id="2_ovo7c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ennu"]
+size = Vector2(36, 44)
+
+[node name="Rope" type="StaticBody2D"]
+position = Vector2(1, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(232, 127.015)
+shape = SubResource("RectangleShape2D_4ennu")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(233, 127)
+node_a = NodePath("..")
+node_b = NodePath("../Segment")
+
+[node name="Segment" parent="." instance=ExtResource("1_hxuja")]
+position = Vector2(-107, -54)
+mass = 0.1
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(236, 165)
+node_a = NodePath("../Segment")
+node_b = NodePath("../Segment2")
+
+[node name="Segment2" parent="." instance=ExtResource("1_hxuja")]
+position = Vector2(-107, -16)
+mass = 0.1
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(236, 202)
+node_a = NodePath("../Segment2")
+node_b = NodePath("../Segment3")
+
+[node name="Segment3" parent="." instance=ExtResource("1_hxuja")]
+position = Vector2(-106, 22)
+mass = 0.1
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(236, 240)
+node_a = NodePath("../Segment3")
+node_b = NodePath("../CharacterBody2D")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_ovo7c")]
+position = Vector2(-247, 56)
