@@ -1,6 +1,6 @@
 Hello Bro this is our repo that we can use
 
-These are some important commands:
+These are some important commands(use if using ommand line):
 git init
 
 git add <file>
