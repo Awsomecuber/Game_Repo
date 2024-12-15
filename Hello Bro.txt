@@ -1,0 +1,24 @@
+Hello Bro this is our repo that we can use
+
+These are some important commands:
+git init
+
+git add <file>
+
+git diff
+
+git branch
+
+git checkout
+
+git push -u <branch>
+
+git pull
+
+git rm <file>
+
+
+
+
+
+
