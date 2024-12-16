@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://btna5mlucx4va"]
+
+[ext_resource type="Texture2D" uid="uid://c6butp664gnyl" path="res://Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Red/Warrior_Red.png" id="1_5fclu"]
+[ext_resource type="Script" path="res://Nodes/player.gd" id="1_dkr03"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_guvpq"]
+size = Vector2(50, 84.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ecor"]
+atlas = ExtResource("1_5fclu")
+region = Rect2(43, 39, 100, 149)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p52s8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ecor")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_dkr03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(517, 201)
+shape = SubResource("RectangleShape2D_guvpq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(515, 227)
+sprite_frames = SubResource("SpriteFrames_p52s8")
