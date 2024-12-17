@@ -3,10 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://1eaoj7sgm8n5" path="res://Nodes/player.tscn" id="1_b4ays"]
 [ext_resource type="PackedScene" uid="uid://ckgnkqu5phcsk" path="res://Nodes/tile_map.tscn" id="2_x1nfk"]
 [ext_resource type="PackedScene" uid="uid://y14mynruacm1" path="res://Nodes/enemy.tscn" id="3_3yshh"]
-
-[sub_resource type="GDScript" id="GDScript_t0d0r"]
-script/source = "extends Label
-"
+[ext_resource type="Script" path="res://Nodes/label.gd" id="4_466o8"]
 
 [node name="Main" type="Node"]
 
@@ -22,8 +19,8 @@ position = Vector2(872, 483)
 [node name="Label" type="Label" parent="."]
 anchors_preset = -1
 anchor_right = 0.02
-offset_left = 806.0
-offset_top = 440.0
-offset_right = 862.96
-offset_bottom = 463.0
-script = SubResource("GDScript_t0d0r")
+offset_left = 619.0
+offset_top = 400.0
+offset_right = 675.96
+offset_bottom = 423.0
+script = ExtResource("4_466o8")

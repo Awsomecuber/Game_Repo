@@ -1,11 +1,28 @@
-[gd_scene load_steps=31 format=3 uid="uid://1eaoj7sgm8n5"]
+[gd_scene load_steps=36 format=3 uid="uid://1eaoj7sgm8n5"]
 
 [ext_resource type="Script" path="res://Nodes/player.gd" id="1_ml2wa"]
 [ext_resource type="Texture2D" uid="uid://djaq4ovh1stlv" path="res://Sprites/01-King Human/Idle (78x58).png" id="1_uceob"]
 [ext_resource type="Texture2D" uid="uid://dt1vp4feio2hd" path="res://Sprites/01-King Human/Fall (78x58).png" id="2_11ppq"]
 [ext_resource type="Texture2D" uid="uid://dg22kft6hj88t" path="res://Sprites/01-King Human/Jump (78x58).png" id="2_dlpja"]
+[ext_resource type="Texture2D" uid="uid://dex35vcvrwt55" path="res://Sprites/01-King Human/Dead (78x58).png" id="2_f753s"]
 [ext_resource type="Texture2D" uid="uid://0y12noqgj70u" path="res://Sprites/01-King Human/Run (78x58).png" id="2_n8hxb"]
 [ext_resource type="Texture2D" uid="uid://bxodj37hpkm53" path="res://Sprites/01-King Human/Ground (78x58).png" id="3_ctdhh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2rwu"]
+atlas = ExtResource("2_f753s")
+region = Rect2(6, 0, 38, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxksn"]
+atlas = ExtResource("2_f753s")
+region = Rect2(80, 0, 40, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrtyx"]
+atlas = ExtResource("2_f753s")
+region = Rect2(157, 0, 39, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cqmk"]
+atlas = ExtResource("2_f753s")
+region = Rect2(235, 0, 39, 58)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_db782"]
 atlas = ExtResource("2_11ppq")
@@ -97,6 +114,23 @@ region = Rect2(790, 0, 39, 58)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_elf6k"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2rwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxksn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrtyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cqmk")
+}],
+"loop": false,
+"name": &"Died",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_db782")
@@ -192,15 +226,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6rhos"]
 size = Vector2(20, 28)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 position = Vector2(58, 25)
 script = ExtResource("1_ml2wa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(482, 195)
 sprite_frames = SubResource("SpriteFrames_elf6k")
-animation = &"Ground"
+animation = &"Died"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

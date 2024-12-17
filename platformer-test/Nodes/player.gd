@@ -3,8 +3,23 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+var Health = 100
+	
+	
 @onready var anim = $AnimatedSprite2D
+@onready var label = $"../Label"
 
+func take_damage(dmg: int):
+	Health -= dmg
+	label.text = "Health: %s" % Health
+	if Health < 100 and Health > 0 or Health > 100:
+		print("Health %s" % Health)
+		
+	elif Health == 0 or Health < 0:
+		print("You Died")
+	
+	
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -37,4 +52,4 @@ func _physics_process(delta: float) -> void:
 		anim.play("Jump")
 	if velocity.y > 0:
 		anim.play("Falling")
-	
+		
