@@ -1,20 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwlkrxv7t856u"]
+[gd_scene load_steps=5 format=3 uid="uid://cwlkrxv7t856u"]
 
 [ext_resource type="Texture2D" uid="uid://b158upm5de2wq" path="res://icon.svg" id="1_isyqx"]
 [ext_resource type="Script" path="res://2x_buton.gd" id="3_gsqma"]
 [ext_resource type="Script" path="res://button.gd" id="3_js64d"]
-[ext_resource type="PackedScene" uid="uid://dcxidwxxmb65" path="res://Enemy.tscn" id="4_qxhpl"]
 
 [sub_resource type="GDScript" id="GDScript_1dngm"]
 script/source = "extends Node
 
 @onready var time = $Timer
-var enemy = preload(\"res://Enemy.tscn\")
+var enemy = preload(\"res://Enemy.tscn\").instantiate()
 
 
-func _on_timer_timeout() -> void:
-	var enemyinst = enemy.instantiate()
-	add_child(enemyinst)
+func _process(delta: float) -> void:
+	time.autostart
+	if time.is_stopped() == true
+		add_child(enemy)
 "
 
 [node name="Main" type="Node"]
@@ -27,7 +27,6 @@ offset_right = 258.0
 offset_bottom = 121.0
 icon = ExtResource("1_isyqx")
 script = ExtResource("3_js64d")
-metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(195, 63)
@@ -48,12 +47,7 @@ Coins: 5"
 script = ExtResource("3_gsqma")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_qxhpl")]
-position = Vector2(390, -210)
+wait_time = 0.074
 
 [connection signal="pressed" from="Main Click" to="Main Click" method="_on_pressed"]
 [connection signal="pressed" from="2x Buton" to="2x Buton" method="_on_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
