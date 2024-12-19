@@ -1,48 +1,47 @@
 [gd_scene load_steps=6 format=3 uid="uid://cwlkrxv7t856u"]
 
 [ext_resource type="Texture2D" uid="uid://b158upm5de2wq" path="res://icon.svg" id="1_isyqx"]
+[ext_resource type="Script" path="res://button.gd" id="2_2gkss"]
 [ext_resource type="Script" path="res://2x_buton.gd" id="3_gsqma"]
-[ext_resource type="Script" path="res://button.gd" id="3_js64d"]
-[ext_resource type="PackedScene" uid="uid://dcxidwxxmb65" path="res://Enemy.tscn" id="4_qxhpl"]
+[ext_resource type="PackedScene" uid="uid://dvn8kemmju7ia" path="res://spawner.tscn" id="4_2uq20"]
 
 [sub_resource type="GDScript" id="GDScript_1dngm"]
 script/source = "extends Node
-
-@onready var time = $Timer
-var enemy = preload(\"res://Enemy.tscn\")
-
-
-func _on_timer_timeout() -> void:
-	var enemyinst = enemy.instantiate()
-	add_child(enemyinst)
 "
 
 [node name="Main" type="Node"]
 script = SubResource("GDScript_1dngm")
 
 [node name="Main Click" type="Button" parent="."]
-offset_left = 122.0
-offset_top = -15.0
-offset_right = 258.0
-offset_bottom = 121.0
+anchors_preset = -1
+anchor_left = -0.057
+anchor_top = -0.113
+anchor_right = 0.062
+anchor_bottom = 0.099
+offset_left = -4.336
+offset_top = 1.22401
+offset_right = -5.424
+offset_bottom = -0.152008
 icon = ExtResource("1_isyqx")
-script = ExtResource("3_js64d")
-metadata/_edit_use_anchors_ = true
+script = ExtResource("2_2gkss")
+metadata/Transform = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(195, 63)
 zoom = Vector2(2, 2)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 114.0
-offset_top = -53.0
-offset_right = 243.0
-offset_bottom = -30.0
+offset_left = -70.0
+offset_top = -99.0
+offset_right = 59.0
+offset_bottom = -76.0
 
 [node name="2x Buton" type="Button" parent="."]
-offset_left = -69.0
-offset_top = -81.0
-offset_bottom = -27.0
+anchors_preset = -1
+anchor_right = 0.011
+offset_left = -269.0
+offset_top = -133.0
+offset_right = -212.672
+offset_bottom = -79.0
 text = "2x Click
 Coins: 5"
 script = ExtResource("3_gsqma")
@@ -51,9 +50,9 @@ script = ExtResource("3_gsqma")
 wait_time = 2.0
 autostart = true
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_qxhpl")]
-position = Vector2(390, -210)
+[node name="Spawner" parent="." instance=ExtResource("4_2uq20")]
+position = Vector2(-182, 0)
 
 [connection signal="pressed" from="Main Click" to="Main Click" method="_on_pressed"]
 [connection signal="pressed" from="2x Buton" to="2x Buton" method="_on_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Spawner" method="_on_timer_timeout"]
