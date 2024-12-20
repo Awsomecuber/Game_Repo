@@ -5,6 +5,7 @@ var coin = 0
 @onready var label = $"../Label"
 
 # Called when the node enters the scene tree for the first time.
+	
 func _process(delta: float) -> void:
 	label.text = "Coins: %s" %coin 
 

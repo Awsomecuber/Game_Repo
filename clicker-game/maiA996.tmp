@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b158upm5de2wq" path="res://icon.svg" id="1_isyqx"]
 [ext_resource type="Script" path="res://button.gd" id="2_2gkss"]
 [ext_resource type="Script" path="res://2x_buton.gd" id="3_gsqma"]
-[ext_resource type="Script" path="res://spawner.gd" id="4_pee76"]
+[ext_resource type="PackedScene" uid="uid://dvn8kemmju7ia" path="res://spawner.tscn" id="4_2uq20"]
 
 [sub_resource type="GDScript" id="GDScript_1dngm"]
 script/source = "extends Node
@@ -29,7 +29,8 @@ icon = ExtResource("1_isyqx")
 script = ExtResource("2_2gkss")
 metadata/Transform = Vector2(0, 0)
 
-[node name="Marker2D" type="Marker2D" parent="Main Click"]
+[node name="Node2D" type="Node2D" parent="Main Click"]
+position = Vector2(70, 72)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -70.0
@@ -52,10 +53,9 @@ script = ExtResource("3_gsqma")
 wait_time = 2.0
 autostart = true
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(-218, 0)
-script = ExtResource("4_pee76")
+[node name="Spawner" parent="." instance=ExtResource("4_2uq20")]
+position = Vector2(-182, 0)
 
 [connection signal="pressed" from="Main Click" to="Main Click" method="_on_pressed"]
 [connection signal="pressed" from="2x Buton" to="2x Buton" method="_on_pressed"]
-[connection signal="timeout" from="Timer" to="Marker2D" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Spawner" method="_on_timer_timeout"]
