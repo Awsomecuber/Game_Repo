@@ -2,7 +2,7 @@ extends Button
 
 var click = 1
 var coin = 0
-@onready var label = $"../Label"
+@onready var label = $Label
 
 # Called when the node enters the scene tree for the first time.
 	

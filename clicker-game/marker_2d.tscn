@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://vjlqc0qmlabj"]
+
+[ext_resource type="Script" path="res://spawner.gd" id="1_1mic8"]
+
+[node name="Marker2D" type="Marker2D"]
+script = ExtResource("1_1mic8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

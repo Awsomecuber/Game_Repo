@@ -2,6 +2,7 @@ extends Marker2D
 
 @onready var time = $"../Timer"
 @onready var enemy = preload("res://Enemy.tscn")
+var pos = self.position
 
 
 

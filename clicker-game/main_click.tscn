@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw2c6k7cstw8h"]
+
+[ext_resource type="Texture2D" uid="uid://b158upm5de2wq" path="res://icon.svg" id="1_n18f4"]
+[ext_resource type="Script" path="res://button.gd" id="2_slv8m"]
+
+[node name="Main Click" type="Button"]
+anchors_preset = -1
+anchor_left = -0.057
+anchor_top = -0.113
+anchor_right = 0.062
+anchor_bottom = 0.099
+offset_left = -4.336
+offset_top = 1.22401
+offset_right = -5.424
+offset_bottom = -0.151993
+icon = ExtResource("1_n18f4")
+script = ExtResource("2_slv8m")
+metadata/Transform = Vector2(0, 0)
+
+[node name="Label" type="Label" parent="."]
+offset_top = -25.0
+offset_right = 129.0
+offset_bottom = -2.00001
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
