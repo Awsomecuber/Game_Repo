@@ -1,11 +1,12 @@
-extends Marker2D
+extends Node2D
 
-@onready var time = $"../Timer"
 @onready var enemy = preload("res://Enemy.tscn")
-var pos = self.position
+@onready var timer = $"../Timer"
 
-
+func _ready():
+	timer.timeout.connect(_on_timer_timeout)
 
 func _on_timer_timeout() -> void:
+	print("added enemy")
 	var enemyinst = enemy.instantiate()
 	add_child(enemyinst)
