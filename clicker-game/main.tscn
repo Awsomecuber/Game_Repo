@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwlkrxv7t856u"]
+[gd_scene load_steps=6 format=3 uid="uid://cwlkrxv7t856u"]
 
+[ext_resource type="Script" path="res://2x Hit.gd" id="2_i62r5"]
 [ext_resource type="PackedScene" uid="uid://cw2c6k7cstw8h" path="res://main_click.tscn" id="3_356wm"]
 [ext_resource type="Script" path="res://2x_buton.gd" id="3_gsqma"]
 [ext_resource type="PackedScene" uid="uid://bqkvncnysnung" path="res://Spawner.tscn" id="3_hfe5e"]
@@ -25,11 +26,31 @@ text = "2x Click
 Coins: 5"
 script = ExtResource("3_gsqma")
 
-[node name="Main Click" parent="." instance=ExtResource("3_356wm")]
-offset_top = 7.224
-offset_bottom = 5.848
+[node name="2x Hit" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 0.011
+offset_left = -269.0
+offset_top = -51.0
+offset_right = -187.672
+offset_bottom = 3.0
+text = "2x Damage
+Coins: 10"
+script = ExtResource("2_i62r5")
 
-[node name="Node2D" parent="." instance=ExtResource("3_hfe5e")]
-position = Vector2(-157, -246)
+[node name="Player" parent="." instance=ExtResource("3_356wm")]
+offset_left = -5.336
+offset_top = 6.224
+offset_right = 2.576
+offset_bottom = 4.848
+
+[node name="Node2D5" parent="." instance=ExtResource("3_hfe5e")]
+position = Vector2(0, -333)
+
+[node name="Node2D4" parent="." instance=ExtResource("3_hfe5e")]
+position = Vector2(-530, 0)
+
+[node name="Node2D3" parent="." instance=ExtResource("3_hfe5e")]
+position = Vector2(455, -31)
 
 [connection signal="pressed" from="2x Buton" to="2x Buton" method="_on_pressed"]
+[connection signal="pressed" from="2x Hit" to="2x Hit" method="_on_pressed"]

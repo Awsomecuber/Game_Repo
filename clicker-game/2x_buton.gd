@@ -1,6 +1,6 @@
 extends Button
 
-@onready var main = $"../Main Click"
+@onready var main = $"../Player"
 
 func _on_pressed() -> void:
 	if main.coin >= 5:

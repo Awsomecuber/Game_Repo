@@ -7,6 +7,7 @@ position = Vector2(-373, -79)
 script = ExtResource("1_oehao")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

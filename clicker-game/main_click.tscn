@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw2c6k7cstw8h"]
+[gd_scene load_steps=6 format=3 uid="uid://cw2c6k7cstw8h"]
 
 [ext_resource type="Texture2D" uid="uid://b158upm5de2wq" path="res://icon.svg" id="1_n18f4"]
 [ext_resource type="Script" path="res://button.gd" id="2_slv8m"]
 [ext_resource type="Script" path="res://player_pos.gd" id="3_tnwjw"]
+[ext_resource type="Script" path="res://Hurtbox.gd" id="4_jwvjf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxo2n"]
+size = Vector2(137, 134.5)
 
 [node name="Player" type="Button"]
 anchors_preset = -1
@@ -10,11 +14,12 @@ anchor_left = -0.057
 anchor_top = -0.113
 anchor_right = 0.062
 anchor_bottom = 0.099
-offset_left = -4.336
-offset_top = 1.22401
-offset_right = -5.424
-offset_bottom = -0.151993
+offset_left = 1.664
+offset_top = -4.776
+offset_right = 9.576
+offset_bottom = -6.152
 icon = ExtResource("1_n18f4")
+icon_alignment = 1
 script = ExtResource("2_slv8m")
 metadata/Transform = Vector2(0, 0)
 
@@ -24,8 +29,25 @@ offset_top = -25.0
 offset_right = 129.0
 offset_bottom = -2.00001
 
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = -77.0
+offset_top = 136.0
+offset_right = 209.0
+offset_bottom = 163.0
+max_value = 10.0
+step = 1.0
+
 [node name="Player_pos" type="Marker2D" parent="."]
-position = Vector2(163, 136)
+position = Vector2(72, 73)
 script = ExtResource("3_tnwjw")
 
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_jwvjf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(71.5, 67)
+shape = SubResource("RectangleShape2D_jxo2n")
+
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
