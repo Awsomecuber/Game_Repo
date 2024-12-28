@@ -25,6 +25,7 @@ offset_right = 129.0
 offset_bottom = -2.00001
 
 [node name="Player_pos" type="Marker2D" parent="."]
+position = Vector2(163, 136)
 script = ExtResource("3_tnwjw")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

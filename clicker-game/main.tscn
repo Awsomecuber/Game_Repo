@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cw2c6k7cstw8h" path="res://main_click.tscn" id="3_356wm"]
 [ext_resource type="Script" path="res://2x_buton.gd" id="3_gsqma"]
-[ext_resource type="Script" path="res://spawner.gd" id="3_j67h0"]
+[ext_resource type="PackedScene" uid="uid://bqkvncnysnung" path="res://Spawner.tscn" id="3_hfe5e"]
 
 [sub_resource type="GDScript" id="GDScript_1dngm"]
 script/source = "extends Node
@@ -29,11 +29,7 @@ script = ExtResource("3_gsqma")
 offset_top = 7.224
 offset_bottom = 5.848
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(-178, 34)
-script = ExtResource("3_j67h0")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+[node name="Node2D" parent="." instance=ExtResource("3_hfe5e")]
+position = Vector2(-157, -246)
 
 [connection signal="pressed" from="2x Buton" to="2x Buton" method="_on_pressed"]

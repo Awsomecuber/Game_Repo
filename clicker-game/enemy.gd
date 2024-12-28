@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const speed = 10
+const speed = 100
 var health = 10
 @onready var player_pos = $"/root/Global".position.get_position()
 
