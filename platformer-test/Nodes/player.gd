@@ -17,6 +17,7 @@ func take_damage(dmg: int):
 		
 	elif Health == 0 or Health < 0:
 		print("You Died")
+		get_tree().quit()
 	
 	
 	

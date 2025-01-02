@@ -14,7 +14,7 @@ script/source = "extends Label
 position = Vector2(355, 293)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_b4ays")]
-position = Vector2(272, 263)
+position = Vector2(737, 465)
 
 [node name="Enemy" parent="." instance=ExtResource("3_3yshh")]
 position = Vector2(872, 483)

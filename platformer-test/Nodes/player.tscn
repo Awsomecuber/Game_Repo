@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://1eaoj7sgm8n5"]
+[gd_scene load_steps=44 format=3 uid="uid://1eaoj7sgm8n5"]
 
 [ext_resource type="Script" path="res://Nodes/player.gd" id="1_ml2wa"]
 [ext_resource type="Texture2D" uid="uid://djaq4ovh1stlv" path="res://Sprites/01-King Human/Idle (78x58).png" id="1_uceob"]
@@ -6,7 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://dg22kft6hj88t" path="res://Sprites/01-King Human/Jump (78x58).png" id="2_dlpja"]
 [ext_resource type="Texture2D" uid="uid://dex35vcvrwt55" path="res://Sprites/01-King Human/Dead (78x58).png" id="2_f753s"]
 [ext_resource type="Texture2D" uid="uid://0y12noqgj70u" path="res://Sprites/01-King Human/Run (78x58).png" id="2_n8hxb"]
+[ext_resource type="Texture2D" uid="uid://ipoec6ntjlwr" path="res://Sprites/01-King Human/Attack (78x58).png" id="2_vknk8"]
 [ext_resource type="Texture2D" uid="uid://bxodj37hpkm53" path="res://Sprites/01-King Human/Ground (78x58).png" id="3_ctdhh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4ddd"]
+atlas = ExtResource("2_vknk8")
+region = Rect2(19, 0, 61, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gda4"]
+atlas = ExtResource("2_vknk8")
+region = Rect2(99, 0, 52, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7mrk"]
+atlas = ExtResource("2_vknk8")
+region = Rect2(163, 0, 43, 58)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y2rwu"]
 atlas = ExtResource("2_f753s")
@@ -114,6 +127,26 @@ region = Rect2(790, 0, 39, 58)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_elf6k"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4ddd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4ddd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gda4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gda4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7mrk")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 4.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y2rwu")
@@ -226,23 +259,82 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6rhos"]
 size = Vector2(20, 28)
 
+[sub_resource type="Animation" id="Animation_xiq6m"]
+resource_name = "Fight"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.51),
+"transitions": PackedFloat32Array(1, 40.5142),
+"update": 0,
+"values": [Vector2(1, -7), Vector2(-16, -9)]
+}
+
+[sub_resource type="Animation" id="Animation_kj1co"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_7xqhr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, -7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5sql8"]
+_data = {
+"Fight": SubResource("Animation_xiq6m"),
+"Idle": SubResource("Animation_kj1co"),
+"RESET": SubResource("Animation_7xqhr")
+}
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(58, 25)
 script = ExtResource("1_ml2wa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(482, 195)
+position = Vector2(-11, -36)
 sprite_frames = SubResource("SpriteFrames_elf6k")
-animation = &"Died"
+animation = &"Attack"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
-speed_scale = 2.0
+frame_progress = 0.768136
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(484, 197)
+position = Vector2(1, -7)
 shape = SubResource("RectangleShape2D_6rhos")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(481, 200)
+position = Vector2(-1, 2)
 zoom = Vector2(4, 4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5sql8")
+}
+autoplay = "Fight"
