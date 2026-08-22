@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4jrqw57l2qbl"]
+[gd_scene format=3 uid="uid://d4jrqw57l2qbl"]
 
 [ext_resource type="PackedScene" uid="uid://1eaoj7sgm8n5" path="res://Nodes/player.tscn" id="1_b4ays"]
 [ext_resource type="PackedScene" uid="uid://ckgnkqu5phcsk" path="res://Nodes/tile_map.tscn" id="2_x1nfk"]
@@ -8,22 +8,22 @@
 script/source = "extends Label
 "
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=1437064422]
 
-[node name="TileMap" parent="." instance=ExtResource("2_x1nfk")]
+[node name="TileMap" parent="." unique_id=1519398871 instance=ExtResource("2_x1nfk")]
 position = Vector2(355, 293)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_b4ays")]
+[node name="CharacterBody2D" parent="." unique_id=1445853255 instance=ExtResource("1_b4ays")]
 position = Vector2(737, 465)
 
-[node name="Enemy" parent="." instance=ExtResource("3_3yshh")]
-position = Vector2(872, 483)
-
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="CharacterBody2D" unique_id=1088251988]
 anchors_preset = -1
 anchor_right = 0.02
-offset_left = 806.0
-offset_top = 440.0
-offset_right = 862.96
-offset_bottom = 463.0
+offset_left = -20.0
+offset_top = -48.0
+offset_right = 36.960022
+offset_bottom = -25.0
 script = SubResource("GDScript_t0d0r")
+
+[node name="Enemy" parent="." unique_id=1210752752 instance=ExtResource("3_3yshh")]
+position = Vector2(872, 483)

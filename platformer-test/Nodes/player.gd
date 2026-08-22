@@ -7,7 +7,7 @@ var Health = 100
 	
 	
 @onready var anim = $AnimatedSprite2D
-@onready var label = $"../Label"
+@onready var label = $"Label"
 
 func take_damage(dmg: int):
 	Health -= dmg
