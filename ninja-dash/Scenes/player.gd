@@ -39,8 +39,7 @@ func _physics_process(delta: float) -> void:
 		attack(0)
 		animated_sprite.play("ground_attack")
 
-		if is_doing_smth == false:
-			hitbox.monitorable = false
+			
 	animate()
 
 	move_and_slide()
@@ -75,3 +74,4 @@ func attack(angle: float) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	is_doing_smth = false
+	hitbox.monitorable = false

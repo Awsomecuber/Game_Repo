@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://ddfuw0cdfppi6"]
+
+[ext_resource type="Script" uid="uid://ctgsj7r7ieqa6" path="res://Scenes/touch_controls.gd" id="1_d52cv"]
+[ext_resource type="Texture2D" uid="uid://dbaphb6pdsv0c" path="res://Sprites/Style A/Large (2×)/button_circle.png" id="1_qpyqi"]
+[ext_resource type="Texture2D" uid="uid://dqnld5wlqnure" path="res://Sprites/Style A/Large (2×)/direction_right.png" id="2_d52cv"]
+[ext_resource type="Texture2D" uid="uid://18al7rl5wti4" path="res://Sprites/Style A/Large (2×)/direction_left.png" id="3_ndc1i"]
+[ext_resource type="Texture2D" uid="uid://p2jc2u5pjkg7" path="res://Sprites/Style A/Large (2×)/dpad_element_south.png" id="4_tta51"]
+
+[node name="Touch Controls" type="CanvasLayer" unique_id=49106407]
+script = ExtResource("1_d52cv")
+
+[node name="Air" type="TouchScreenButton" parent="." unique_id=1592202363]
+position = Vector2(842, 500)
+texture_normal = ExtResource("1_qpyqi")
+action = "air_attack"
+
+[node name="Right" type="TouchScreenButton" parent="." unique_id=1110766771]
+position = Vector2(283, 500)
+scale = Vector2(1.25, 1.25)
+texture_normal = ExtResource("2_d52cv")
+action = "move_right"
+
+[node name="Left" type="TouchScreenButton" parent="." unique_id=1851017583]
+position = Vector2(53, 500)
+scale = Vector2(1.25, 1.25)
+texture_normal = ExtResource("3_ndc1i")
+action = "move_left"
+
+[node name="Ground" type="TouchScreenButton" parent="." unique_id=123722700]
+position = Vector2(1004, 500)
+texture_normal = ExtResource("1_qpyqi")
+action = "ground_attack"
+
+[node name="Jump" type="TouchScreenButton" parent="." unique_id=262808135]
+position = Vector2(935.99994, 379)
+scale = Vector2(0.8828125, 0.9375)
+texture_normal = ExtResource("4_tta51")
+action = "jump"
+
+[connection signal="pressed" from="Air" to="." method="_on_air_pressed"]
+[connection signal="released" from="Air" to="." method="_on_air_released"]
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
+[connection signal="released" from="Right" to="." method="_on_right_released"]
+[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
+[connection signal="released" from="Left" to="." method="_on_left_released"]
+[connection signal="pressed" from="Ground" to="." method="_on_ground_pressed"]
+[connection signal="released" from="Ground" to="." method="_on_ground_released"]
+[connection signal="pressed" from="Jump" to="." method="_on_jump_pressed"]
+[connection signal="released" from="Jump" to="." method="_on_jump_released"]

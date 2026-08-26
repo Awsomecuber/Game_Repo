@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dsymdyvb1yf66" path="res://5. Mine Tileset - Starter Pack 16p/3_Far_Background_Tile_16.png" id="3_fgofq"]
 [ext_resource type="Texture2D" uid="uid://djgxo788spjdg" path="res://5. Mine Tileset - Starter Pack 16p/Mine_Tileset_1B_16.png" id="4_2irst"]
 [ext_resource type="PackedScene" uid="uid://ctuoah55ua1rt" path="res://Scenes/enemy.tscn" id="7_fgofq"]
+[ext_resource type="PackedScene" uid="uid://ddfuw0cdfppi6" path="res://Scenes/touch_controls.tscn" id="8_2irst"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bf53h"]
 texture = ExtResource("1_b2bpf")
@@ -270,6 +271,16 @@ sources/3 = SubResource("TileSetAtlasSource_dahhg")
 sources/4 = SubResource("TileSetAtlasSource_3so38")
 
 [node name="Game" type="Node2D" unique_id=286602583]
+
+[node name="Control" type="Control" parent="." unique_id=1599711035]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Touch Controls" parent="Control" unique_id=49106407 instance=ExtResource("8_2irst")]
+visible = false
 
 [node name="Restartzone" parent="." unique_id=599624570 instance=ExtResource("1_7lihs")]
 position = Vector2(-475, 335)
