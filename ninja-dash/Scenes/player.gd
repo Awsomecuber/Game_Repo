@@ -1,37 +1,75 @@
 extends CharacterBody2D
 
-
 const SPEED = 100.0
 const JUMP_VELOCITY = -350.0
+const launch_speed: float = 750.0
+const base_angle_degrees: float = -45.0
+var is_doing_smth: bool = false
+var cooldown_time: float = .7
+var cooldown_remaining: float = 0.0
+var facing_direction: float = 1.0  # remembers last facing direction
+var direction :float=0
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
+	direction = Input.get_axis("move_left", "move_right")
 
-	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("move_left", "move_right")
-	
-	if direction > 0:
-		animated_sprite.flip_h = false
-	elif direction < 0:
-		animated_sprite.flip_h = true
+	if not is_doing_smth:
+		if direction:
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	# Tick down cooldown
+	if cooldown_remaining > 0:
+		cooldown_remaining -= delta
+
+	if Input.is_action_just_pressed("air_attack") and cooldown_remaining <= 0:
+		attack(base_angle_degrees)
+		animated_sprite.play("air_attack")
+			
+	if Input.is_action_just_pressed("ground_attack") and is_on_floor() and cooldown_remaining <= 0:
+		attack(0)
+		animated_sprite.play("ground_attack")
+
 		
-	if direction == 0:
-		animated_sprite.play("Idle")
-	else:
-		animated_sprite.play("Run")
-	
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	animate()
 
 	move_and_slide()
+	
+func animate():
+	if direction > 0:
+		animated_sprite.flip_h = false
+		facing_direction = 1
+	elif direction < 0:
+		animated_sprite.flip_h = true
+		facing_direction = -1
+		
+	
+	if not is_doing_smth:
+		if direction == 0:
+			animated_sprite.play("Idle")
+		else:
+			animated_sprite.play("Run")
+			
+		if not is_on_floor():
+			animated_sprite.play("Jump")
+			
+
+func attack(angle: float) -> void:
+	var angle_rad = deg_to_rad(angle)
+	velocity = Vector2(cos(angle_rad) * facing_direction, sin(angle_rad)) * launch_speed
+	cooldown_remaining = cooldown_time
+	is_doing_smth = true
+	
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	is_doing_smth = false
