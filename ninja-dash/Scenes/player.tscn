@@ -237,18 +237,28 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_7e0sq"]
 radius = 4.1231055
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_mhj1p"]
+radius = 7.071068
+
 [node name="Player" type="CharacterBody2D" unique_id=1649176471]
 script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1940226678]
 sprite_frames = SubResource("SpriteFrames_7e0sq")
-animation = &"ground_attack"
+animation = &"Run"
 autoplay = "Idle"
-frame = 5
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=128442720]
 position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_7e0sq")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=980692441]
+collision_mask = 2
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1111585329]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_mhj1p")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b34qpxqn65uwq"]
+
+[ext_resource type="Script" uid="uid://3hueejc502v" path="res://Scenes/restartzone.gd" id="1_pyqe8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e0sq"]
+size = Vector2(1159, 20)
+
+[node name="Restartzone" type="Area2D" unique_id=599624570]
+script = ExtResource("1_pyqe8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2041164950]
+position = Vector2(569.5, 0)
+shape = SubResource("RectangleShape2D_7e0sq")
+
+[node name="Timer" type="Timer" parent="." unique_id=1669273623]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -9,7 +9,7 @@ var cooldown_time: float = .7
 var cooldown_remaining: float = 0.0
 var facing_direction: float = 1.0  # remembers last facing direction
 var direction :float=0
-
+@onready var hitbox: Area2D = $Hitbox
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
@@ -39,7 +39,8 @@ func _physics_process(delta: float) -> void:
 		attack(0)
 		animated_sprite.play("ground_attack")
 
-		
+		if is_doing_smth == false:
+			hitbox.monitorable = false
 	animate()
 
 	move_and_slide()
@@ -68,6 +69,7 @@ func attack(angle: float) -> void:
 	velocity = Vector2(cos(angle_rad) * facing_direction, sin(angle_rad)) * launch_speed
 	cooldown_remaining = cooldown_time
 	is_doing_smth = true
+	hitbox.monitorable = true
 	
 
 
