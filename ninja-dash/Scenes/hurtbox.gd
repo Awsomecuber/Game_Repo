@@ -4,7 +4,7 @@ extends Area2D
 @onready var label: Label = $"../Label"
 
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(_area: Area2D) -> void:
 	label.text = "Health: %d" % health
 	health -= 1
 
