@@ -296,5 +296,5 @@ position = Vector2(1, -44)
 position = Vector2(-1, 2)
 zoom = Vector2(4, 4)
 
-[node name="Enemy" parent="." unique_id=123381718 instance=ExtResource("7_fgofq")]
-position = Vector2(58, 1)
+[node name="Enemy" parent="." unique_id=870192864 instance=ExtResource("7_fgofq")]
+position = Vector2(57, 1)
