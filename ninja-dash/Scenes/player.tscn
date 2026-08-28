@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://0h86eg3l5ipo" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dqjjp2pds5ugg" path="res://Ninja Assets/brackeys_platformer_assets/sprites/knight.png" id="1_v0iea"]
 [ext_resource type="Script" uid="uid://cfguy25do65mn" path="res://Scenes/hitbox.gd" id="3_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://dywesbogh2cvj" path="res://Scenes/gun.tscn" id="4_vgqql"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("1_v0iea")
@@ -522,5 +523,8 @@ debug_color = Color(0.69791776, 0.8387246, 7.70092e-07, 0.41960785)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=221341705]
 libraries/ = SubResource("AnimationLibrary_3smsa")
 autoplay = &"Idle"
+
+[node name="Gun" parent="." unique_id=84787652 instance=ExtResource("4_vgqql")]
+position = Vector2(2, 6)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

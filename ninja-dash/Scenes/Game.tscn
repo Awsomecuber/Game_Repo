@@ -1,13 +1,14 @@
 [gd_scene format=4 uid="uid://ixa77clc8asv"]
 
 [ext_resource type="PackedScene" uid="uid://b34qpxqn65uwq" path="res://Scenes/restartzone.tscn" id="1_7lihs"]
-[ext_resource type="Texture2D" uid="uid://cx5dxypsbmvq7" path="res://5. Mine Tileset - Starter Pack 16p/1_Mine_Tileset_1_16.png" id="1_b2bpf"]
+[ext_resource type="Texture2D" uid="uid://cx5dxypsbmvq7" path="res://Ninja Assets/5. Mine Tileset - Starter Pack 16p/1_Mine_Tileset_1_16.png" id="1_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://dieqneo61rowa" path="res://Scenes/player.tscn" id="1_iukft"]
-[ext_resource type="Texture2D" uid="uid://fmap2ukq1sy2" path="res://5. Mine Tileset - Starter Pack 16p/2_Mine_Tileset_1_Background_16.png" id="2_7lihs"]
-[ext_resource type="Texture2D" uid="uid://dsymdyvb1yf66" path="res://5. Mine Tileset - Starter Pack 16p/3_Far_Background_Tile_16.png" id="3_fgofq"]
-[ext_resource type="Texture2D" uid="uid://djgxo788spjdg" path="res://5. Mine Tileset - Starter Pack 16p/Mine_Tileset_1B_16.png" id="4_2irst"]
+[ext_resource type="Texture2D" uid="uid://fmap2ukq1sy2" path="res://Ninja Assets/5. Mine Tileset - Starter Pack 16p/2_Mine_Tileset_1_Background_16.png" id="2_7lihs"]
+[ext_resource type="Texture2D" uid="uid://dsymdyvb1yf66" path="res://Ninja Assets/5. Mine Tileset - Starter Pack 16p/3_Far_Background_Tile_16.png" id="3_fgofq"]
+[ext_resource type="Texture2D" uid="uid://rdbxfhxwr3y8" path="res://Ninja Assets/5. Mine Tileset - Starter Pack 16p/Mine_Tileset_1B_Background_16.png" id="4_2irst"]
 [ext_resource type="PackedScene" uid="uid://ctuoah55ua1rt" path="res://Scenes/enemy.tscn" id="7_fgofq"]
 [ext_resource type="PackedScene" uid="uid://ddfuw0cdfppi6" path="res://Scenes/touch_controls.tscn" id="8_2irst"]
+[ext_resource type="PackedScene" uid="uid://dk48bosdpujf3" path="res://Scenes/Mouse.tscn" id="9_bf53h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bf53h"]
 texture = ExtResource("1_b2bpf")
@@ -279,6 +280,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Touch Controls" parent="Control" unique_id=49106407 instance=ExtResource("8_2irst")]
+visible = false
 
 [node name="Restartzone" parent="." unique_id=599624570 instance=ExtResource("1_7lihs")]
 position = Vector2(-475, 335)
@@ -296,3 +298,6 @@ zoom = Vector2(4, 4)
 
 [node name="Enemy" parent="." unique_id=870192864 instance=ExtResource("7_fgofq")]
 position = Vector2(57, 1)
+
+[node name="Sprite2D" parent="." unique_id=554462849 instance=ExtResource("9_bf53h")]
+position = Vector2(-129, -21)

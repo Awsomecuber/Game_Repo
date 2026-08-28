@@ -1,0 +1,16 @@
+[configuration]
+
+entry_symbol = "gdwiiinput_library_init"
+compatibility_minimum = "4.4"
+reloadable = true
+
+[libraries]
+
+windows.debug.x86_64 = "windows/gdwiiinput.windows.template_debug.x86_64.dll"
+windows.release.x86_64 = "windows/bin/gdwiiinput.windows.template_release.x86_64.dll"
+
+linux.debug.x86_64 = "linux/libgdwiiinput.linux.template_debug.x86_64.so"
+linux.release.x86_64 = "linux/libgdwiiinput.linux.template_release.x86_64.so"
+
+linux.debug.arm64 = "linux/libgdwiiinput.linux.template_debug.arm64.so"
+linux.release.arm64 = "linux/bin/libgdwiiinput.linux.template_release.arm64.so"

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dk48bosdpujf3"]
+
+[ext_resource type="Texture2D" uid="uid://c1hfowqi72q1o" path="res://Ninja Assets/guns/crosshair.png" id="1_6wno3"]
+[ext_resource type="Script" uid="uid://bos3rfxxph030" path="res://sprite_2d.gd" id="2_kalpc"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=554462849]
+z_index = 1443
+scale = Vector2(1.029, 1.029)
+texture = ExtResource("1_6wno3")
+region_enabled = true
+region_rect = Rect2(41, 13, 13, 13)
+script = ExtResource("2_kalpc")

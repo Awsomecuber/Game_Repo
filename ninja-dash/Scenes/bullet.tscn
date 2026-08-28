@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://5lvnh10mf5x5"]
+
+[ext_resource type="Script" uid="uid://6yjq8yvrakjy" path="res://Scenes/bullet.gd" id="1_oduel"]
+[ext_resource type="Texture2D" uid="uid://ibtjsb8v48gj" path="res://Ninja Assets/Sprites/10-Cannon/Cannon Ball.png" id="1_xjght"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f8ccx"]
+radius = 1.0
+
+[node name="Bullet" type="Area2D" unique_id=68389525 groups=["Hitbox"]]
+collision_mask = 2
+script = ExtResource("1_oduel")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=9534854]
+position = Vector2(-1.0000019, -1)
+scale = Vector2(0.18181819, 0.17857142)
+texture = ExtResource("1_xjght")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1977677243]
+shape = SubResource("CircleShape2D_f8ccx")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

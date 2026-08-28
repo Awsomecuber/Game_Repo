@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	animate()
 
 	move_and_slide()
-	
+
 func animate():
 	if direction > 0:
 		animated_sprite.flip_h = false
@@ -55,7 +55,6 @@ func animate():
 		animated_sprite.flip_h = true
 		facing_direction = -1
 		
-	
 	if not is_doing_smth:
 		if direction == 0:
 			animation_player.play("Idle")
@@ -64,7 +63,6 @@ func animate():
 			
 		if not is_on_floor():
 			animation_player.play("Jump")
-			
 
 func attack(angle: float) -> void:
 	var angle_rad = deg_to_rad(angle)
@@ -72,6 +70,8 @@ func attack(angle: float) -> void:
 	cooldown_remaining = cooldown_time
 	is_doing_smth = true
 	#hitbox.monitorable = true
+
+
 
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	is_doing_smth = false
