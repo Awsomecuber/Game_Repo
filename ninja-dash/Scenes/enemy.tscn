@@ -191,7 +191,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_287tu"]
 resource_name = "Idle"
-length = 1.0000100149013103
+length = 1.0000100149013105
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -305,7 +305,17 @@ _data = {
 disable_mode = 2
 script = ExtResource("1_1f0kj")
 
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=658251754]
+offset_left = -16.0
+offset_top = -17.0
+offset_right = 35.0
+offset_bottom = -11.0
+max_value = 5.0
+step = 1.0
+show_percentage = false
+
 [node name="Label" type="Label" parent="." unique_id=625100994]
+visible = false
 offset_left = -10.0
 offset_top = -31.0
 offset_right = 34.0
@@ -315,12 +325,13 @@ offset_bottom = -8.0
 position = Vector2(6, -5)
 sprite_frames = SubResource("SpriteFrames_f8ccx")
 animation = &"Attack"
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=513259597]
 position = Vector2(9, 2)
 shape = SubResource("CircleShape2D_ta2yt")
 
-[node name="Hurtbox" type="Area2D" parent="." unique_id=1876629527]
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1876629527 groups=["Hurtbox"]]
 collision_layer = 2
 script = ExtResource("3_afpow")
 
@@ -332,4 +343,4 @@ shape = SubResource("RectangleShape2D_f8ccx")
 libraries/ = SubResource("AnimationLibrary_ghaa6")
 autoplay = &"Idle"
 
-[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

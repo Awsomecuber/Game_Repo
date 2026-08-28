@@ -9,8 +9,11 @@ var cooldown_time: float = .7
 var cooldown_remaining: float = 0.0
 var facing_direction: float = 1.0  # remembers last facing direction
 var direction :float=0
-@onready var hitbox: Area2D = $Hitbox
+
+#@onready var hitbox: Area2D = $Hitbox
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -33,11 +36,11 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("air_attack") and cooldown_remaining <= 0:
 		attack(base_angle_degrees)
-		animated_sprite.play("air_attack")
+		animation_player.play("Air_attack")
 			
 	if Input.is_action_just_pressed("ground_attack") and is_on_floor() and cooldown_remaining <= 0:
 		attack(0)
-		animated_sprite.play("ground_attack")
+		animation_player.play("Ground_attack")
 
 			
 	animate()
@@ -55,12 +58,12 @@ func animate():
 	
 	if not is_doing_smth:
 		if direction == 0:
-			animated_sprite.play("Idle")
+			animation_player.play("Idle")
 		else:
-			animated_sprite.play("Run")
+			animation_player.play("Run")
 			
 		if not is_on_floor():
-			animated_sprite.play("Jump")
+			animation_player.play("Jump")
 			
 
 func attack(angle: float) -> void:
@@ -68,10 +71,8 @@ func attack(angle: float) -> void:
 	velocity = Vector2(cos(angle_rad) * facing_direction, sin(angle_rad)) * launch_speed
 	cooldown_remaining = cooldown_time
 	is_doing_smth = true
-	hitbox.monitorable = true
-	
+	#hitbox.monitorable = true
 
-
-func _on_animated_sprite_2d_animation_finished() -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	is_doing_smth = false
-	hitbox.monitorable = false
+	#hitbox.monitorable = false
