@@ -295,11 +295,11 @@ tile_map_data = PackedByteArray("AAD//wIAAQABAAAAAAACAAIAAQABAAAAAAADAAIAAQABAAA
 tile_set = SubResource("TileSet_mhj1p")
 
 [node name="Player" parent="." unique_id=1649176471 instance=ExtResource("1_iukft")]
-position = Vector2(1, -44)
+position = Vector2(-138, 8)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1093455945]
 position = Vector2(-1, 2)
 zoom = Vector2(4, 4)
 
 [node name="Enemy" parent="." unique_id=870192864 instance=ExtResource("7_fgofq")]
-position = Vector2(57, 1)
+position = Vector2(98, -4)

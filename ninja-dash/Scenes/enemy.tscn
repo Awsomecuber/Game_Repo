@@ -301,6 +301,10 @@ _data = {
 &"RESET": SubResource("Animation_0830c")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_f8ccx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7e0sq"]
+
 [node name="Enemy" type="CharacterBody2D" unique_id=870192864]
 disable_mode = 2
 script = ExtResource("1_1f0kj")
@@ -332,7 +336,8 @@ position = Vector2(9, 2)
 shape = SubResource("CircleShape2D_ta2yt")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1876629527 groups=["Hurtbox"]]
-collision_layer = 2
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("3_afpow")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1190806116]
@@ -343,4 +348,24 @@ shape = SubResource("RectangleShape2D_f8ccx")
 libraries/ = SubResource("AnimationLibrary_ghaa6")
 autoplay = &"Idle"
 
+[node name="Chase_enter" type="Area2D" parent="." unique_id=2143242388]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chase_enter" unique_id=1651778542]
+position = Vector2(9, 1)
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_f8ccx")
+
+[node name="Chase_exit" type="Area2D" parent="." unique_id=894539405]
+position = Vector2(11, 0)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Chase_exit" unique_id=1699866907]
+scale = Vector2(7, 7)
+shape = SubResource("CircleShape2D_7e0sq")
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="Chase_enter" to="." method="_on_chase_enter_body_entered"]
+[connection signal="body_exited" from="Chase_exit" to="." method="_on_chase_exit_body_exited"]
