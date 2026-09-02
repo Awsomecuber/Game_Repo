@@ -14,6 +14,9 @@ var direction :float=0
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+func _ready() -> void:
+	Global.playerBody = self
+
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -35,11 +38,11 @@ func _physics_process(delta: float) -> void:
 		cooldown_remaining -= delta
 
 	if Input.is_action_just_pressed("air_attack") and cooldown_remaining <= 0:
-		attack(base_angle_degrees)
+		dash(base_angle_degrees)
 		animation_player.play("Air_attack")
 			
 	if Input.is_action_just_pressed("ground_attack") and is_on_floor() and cooldown_remaining <= 0:
-		attack(0)
+		dash(0)
 		animation_player.play("Ground_attack")
 
 			
@@ -64,7 +67,7 @@ func animate():
 		if not is_on_floor():
 			animation_player.play("Jump")
 
-func attack(angle: float) -> void:
+func dash(angle: float) -> void:
 	var angle_rad = deg_to_rad(angle)
 	velocity = Vector2(cos(angle_rad) * facing_direction, sin(angle_rad)) * launch_speed
 	cooldown_remaining = cooldown_time

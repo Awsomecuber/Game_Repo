@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://0h86eg3l5ipo" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dqjjp2pds5ugg" path="res://Ninja Assets/brackeys_platformer_assets/sprites/knight.png" id="1_v0iea"]
-[ext_resource type="Script" uid="uid://cfguy25do65mn" path="res://Scenes/hitbox.gd" id="3_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://dywesbogh2cvj" path="res://Scenes/gun.tscn" id="4_vgqql"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
@@ -239,9 +238,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_7e0sq"]
 radius = 5.8309517
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mhj1p"]
-radius = 8.0
-
 [sub_resource type="Animation" id="Animation_cvnsp"]
 resource_name = "Air_attack"
 length = 0.03333666840530932
@@ -268,18 +264,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"air_attack"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hitbox:monitorable")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_6t5aa"]
@@ -309,18 +293,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"ground_attack"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hitbox:monitorable")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_vgqql"]
@@ -352,18 +324,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [&"Idle"]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hitbox:monitorable")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_fkybt"]
 resource_name = "Jump"
@@ -393,18 +353,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [&"Jump"]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hitbox:monitorable")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_3smsa"]
 length = 0.001
@@ -431,18 +379,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"air_attack"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hitbox:monitorable")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_x3wgy"]
@@ -473,18 +409,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [&"Run"]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hitbox:monitorable")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3smsa"]
 _data = {
@@ -508,17 +432,6 @@ frame = 1
 position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_7e0sq")
 debug_color = Color(0.8491804, 0.46937352, 1, 0.41960785)
-
-[node name="Hitbox" type="Area2D" parent="." unique_id=980692441 groups=["Hitbox"]]
-collision_mask = 2
-monitoring = false
-monitorable = false
-script = ExtResource("3_6t5aa")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1111585329]
-position = Vector2(0, 4)
-shape = SubResource("CircleShape2D_mhj1p")
-debug_color = Color(0.69791776, 0.8387246, 7.70092e-07, 0.41960785)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=221341705]
 libraries/ = SubResource("AnimationLibrary_3smsa")

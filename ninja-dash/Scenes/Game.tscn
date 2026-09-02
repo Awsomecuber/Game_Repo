@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://ixa77clc8asv"]
 
 [ext_resource type="PackedScene" uid="uid://b34qpxqn65uwq" path="res://Scenes/restartzone.tscn" id="1_7lihs"]
+[ext_resource type="Script" uid="uid://b81n2um7nwu8s" path="res://Scenes/game.gd" id="1_71axn"]
 [ext_resource type="Texture2D" uid="uid://cx5dxypsbmvq7" path="res://Ninja Assets/5. Mine Tileset - Starter Pack 16p/1_Mine_Tileset_1_16.png" id="1_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://dieqneo61rowa" path="res://Scenes/player.tscn" id="1_iukft"]
 [ext_resource type="Texture2D" uid="uid://fmap2ukq1sy2" path="res://Ninja Assets/5. Mine Tileset - Starter Pack 16p/2_Mine_Tileset_1_Background_16.png" id="2_7lihs"]
@@ -272,6 +273,10 @@ sources/3 = SubResource("TileSetAtlasSource_dahhg")
 sources/4 = SubResource("TileSetAtlasSource_3so38")
 
 [node name="Game" type="Node2D" unique_id=286602583]
+script = ExtResource("1_71axn")
+
+[node name="Sprite2D" parent="." unique_id=554462849 instance=ExtResource("9_bf53h")]
+position = Vector2(-129, -21)
 
 [node name="Control" type="Control" parent="." unique_id=1599711035]
 layout_mode = 3
@@ -298,6 +303,3 @@ zoom = Vector2(4, 4)
 
 [node name="Enemy" parent="." unique_id=870192864 instance=ExtResource("7_fgofq")]
 position = Vector2(57, 1)
-
-[node name="Sprite2D" parent="." unique_id=554462849 instance=ExtResource("9_bf53h")]
-position = Vector2(-129, -21)
