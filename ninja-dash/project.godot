@@ -21,6 +21,7 @@ Global="*uid://djps6bdn0hx32"
 
 [display]
 
+window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

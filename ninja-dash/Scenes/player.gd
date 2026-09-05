@@ -74,8 +74,6 @@ func dash(angle: float) -> void:
 	is_doing_smth = true
 	#hitbox.monitorable = true
 
-
-
 func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	is_doing_smth = false
 	#hitbox.monitorable = false

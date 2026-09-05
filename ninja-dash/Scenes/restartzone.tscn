@@ -3,13 +3,14 @@
 [ext_resource type="Script" uid="uid://3hueejc502v" path="res://Scenes/restartzone.gd" id="1_pyqe8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7e0sq"]
-size = Vector2(1159, 20)
+size = Vector2(2348, 20)
 
 [node name="Restartzone" type="Area2D" unique_id=599624570]
+collision_mask = 2
 script = ExtResource("1_pyqe8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2041164950]
-position = Vector2(569.5, 0)
+position = Vector2(1164, 0)
 shape = SubResource("RectangleShape2D_7e0sq")
 
 [node name="Timer" type="Timer" parent="." unique_id=1669273623]

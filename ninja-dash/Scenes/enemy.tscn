@@ -184,6 +184,10 @@ radius = 6.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8ccx"]
 size = Vector2(17.5, 15.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_f8ccx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7e0sq"]
+
 [sub_resource type="Animation" id="Animation_ghaa6"]
 resource_name = "Attack"
 length = 0.5000125
@@ -403,10 +407,6 @@ _data = {
 &"run": SubResource("Animation_1dp5w")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_f8ccx"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7e0sq"]
-
 [node name="Enemy" type="CharacterBody2D" unique_id=870192864]
 disable_mode = 2
 script = ExtResource("1_1f0kj")
@@ -430,6 +430,7 @@ offset_bottom = -8.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1310239897]
 sprite_frames = SubResource("SpriteFrames_f8ccx")
 animation = &"Attack"
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=513259597]
 position = Vector2(2, 7)
@@ -444,10 +445,6 @@ script = ExtResource("3_afpow")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1190806116]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_f8ccx")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1298989918]
-libraries/ = SubResource("AnimationLibrary_ghaa6")
-autoplay = &"Idle"
 
 [node name="Chase_enter" type="Area2D" parent="." unique_id=2143242388]
 collision_layer = 4
@@ -466,6 +463,10 @@ collision_mask = 2
 position = Vector2(2.0000002, 3)
 scale = Vector2(7, 7)
 shape = SubResource("CircleShape2D_7e0sq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1298989918]
+libraries/ = SubResource("AnimationLibrary_ghaa6")
+autoplay = &"Idle"
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="body_entered" from="Chase_enter" to="." method="_on_chase_enter_body_entered"]
