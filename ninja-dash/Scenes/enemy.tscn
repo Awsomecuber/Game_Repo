@@ -416,8 +416,6 @@ offset_left = -21.0
 offset_top = -11.0
 offset_right = 30.0
 offset_bottom = -5.0
-max_value = 5.0
-step = 1.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="." unique_id=625100994]

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://c5pt08lgl043t"]
+
+[ext_resource type="Texture2D" uid="uid://db8b8y7ftsjxu" path="res://Assets/Sprites/Schoolgirl_1/Charge.png" id="1_uok8s"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f8ccx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j25ne"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85ged"]
+atlas = ExtResource("1_uok8s")
+region = Rect2(27, 25, 9, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkisk"]
+atlas = ExtResource("1_uok8s")
+region = Rect2(88, 26, 13, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgycy"]
+atlas = ExtResource("1_uok8s")
+region = Rect2(154, 27, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gherr"]
+atlas = ExtResource("1_uok8s")
+region = Rect2(218, 27, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkmtu"]
+atlas = ExtResource("1_uok8s")
+region = Rect2(280, 29, 12, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c61u6"]
+atlas = ExtResource("1_uok8s")
+region = Rect2(345, 27, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sev5v"]
+atlas = ExtResource("1_uok8s")
+region = Rect2(412, 25, 8, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8ccx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85ged")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkisk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgycy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gherr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkmtu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c61u6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sev5v")
+}],
+"loop": 1,
+"name": &"Shoot",
+"speed": 8.0
+}]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=649639607 groups=["Hitbox"]]
+collision_layer = 2
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_f8ccx")
+gravity_scale = 0.0
+linear_velocity = Vector2(500, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=917723568 groups=["Hitbox"]]
+shape = SubResource("CircleShape2D_j25ne")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1760524739]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_f8ccx")
+animation = &"Shoot"
+autoplay = "Shoot"
+frame_progress = 0.6121437
