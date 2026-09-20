@@ -126,10 +126,31 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ursto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbq6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ursto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbq6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ursto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbq6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ursto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbq6j")
 }],
 "loop": 0,
 "name": &"Hit",
-"speed": 5.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -204,6 +225,8 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_f8ccx")
 animation = &"Hit"
 autoplay = "Idle"
+frame = 1
+frame_progress = 1.0
 flip_h = true
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1524467089]

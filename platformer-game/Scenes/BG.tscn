@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cvwiltbiyxe4g"]
+
+[ext_resource type="AudioStream" uid="uid://cds7gymtr8jh2" path="res://Assets/Sprites/It's me, It's Verity - Horror Skunx (official song).mp3" id="1_r2vh8"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=349704853]
+stream = ExtResource("1_r2vh8")
+autoplay = true
