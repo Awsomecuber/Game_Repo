@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dsb6fx6km3vfn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f8ccx"]
+height = 50.0
+
+[node name="Node2D" type="RigidBody2D" unique_id=785253840]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1648794024]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_f8ccx")

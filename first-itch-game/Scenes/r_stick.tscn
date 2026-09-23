@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dyjhokedb5e3v"]
+
+[ext_resource type="Texture2D" uid="uid://da2ywxlx4jsrq" path="res://icon.svg" id="1_ly6x7"]
+[ext_resource type="Script" uid="uid://cbwrj7n00sq3t" path="res://Script/RStick.gd" id="2_vfdol"]
+
+[node name="RStick" type="Sprite2D" unique_id=1246851457]
+texture = ExtResource("1_ly6x7")
+script = ExtResource("2_vfdol")

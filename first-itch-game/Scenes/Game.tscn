@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ci6nqt4b6dg4r"]
+
+[ext_resource type="PackedScene" uid="uid://dkjsmp25o8teg" path="res://Scenes/l_stick.tscn" id="2_j5yw3"]
+[ext_resource type="PackedScene" uid="uid://dyjhokedb5e3v" path="res://Scenes/r_stick.tscn" id="3_kldst"]
+
+[node name="Node2D" type="Node2D" unique_id=1189392883]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1194846759]
+position = Vector2(526, 240)
+
+[node name="LStick" parent="." unique_id=530897747 instance=ExtResource("2_j5yw3")]
+position = Vector2(150, 154)
+
+[node name="RStick" parent="." unique_id=1246851457 instance=ExtResource("3_kldst")]
+position = Vector2(416, 156)

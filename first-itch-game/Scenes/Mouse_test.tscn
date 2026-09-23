@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dln55jpnsbss0"]
+
+[ext_resource type="Script" uid="uid://crvdtsxkfhs4v" path="res://Script/Mouse_test.gd" id="1_da1fd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7e0sq"]
+radius = 37.054016
+
+[node name="RigidBody2D2" type="RigidBody2D" unique_id=545744575]
+script = ExtResource("1_da1fd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1285556936]
+shape = SubResource("CircleShape2D_7e0sq")
