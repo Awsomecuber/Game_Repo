@@ -1,15 +1,52 @@
 [gd_scene format=3 uid="uid://ci6nqt4b6dg4r"]
 
-[ext_resource type="PackedScene" uid="uid://dkjsmp25o8teg" path="res://Scenes/l_stick.tscn" id="2_j5yw3"]
-[ext_resource type="PackedScene" uid="uid://dyjhokedb5e3v" path="res://Scenes/r_stick.tscn" id="3_kldst"]
+[ext_resource type="PackedScene" uid="uid://hd1suxyg8j25" path="res://Scenes/Arms.tscn" id="1_gl6un"]
+[ext_resource type="PackedScene" uid="uid://b3ye8fxuqmlxj" path="res://Scenes/ball.tscn" id="2_j5yw3"]
+[ext_resource type="Script" uid="uid://5fm5wy0qrj4y" path="res://Script/Restart.gd" id="3_j5yw3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m208y"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8ccx"]
+size = Vector2(61, 447)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e0sq"]
+size = Vector2(490.5, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhj1p"]
+size = Vector2(1043, 19)
 
 [node name="Node2D" type="Node2D" unique_id=1189392883]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1194846759]
 position = Vector2(526, 240)
 
-[node name="LStick" parent="." unique_id=530897747 instance=ExtResource("2_j5yw3")]
-position = Vector2(150, 154)
+[node name="RigidBody2D" parent="." unique_id=1475512528 instance=ExtResource("1_gl6un")]
+position = Vector2(390.00003, 214)
 
-[node name="RStick" parent="." unique_id=1246851457 instance=ExtResource("3_kldst")]
-position = Vector2(416, 156)
+[node name="Ball" parent="." unique_id=217203325 groups=["ball"] instance=ExtResource("2_j5yw3")]
+position = Vector2(448, 213)
+gravity_scale = 0.5
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1616559625 groups=["wall"]]
+position = Vector2(730, 274)
+physics_material_override = SubResource("PhysicsMaterial_m208y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2127787976]
+shape = SubResource("RectangleShape2D_f8ccx")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=114436884 groups=["wall"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1041741271]
+position = Vector2(488.25, 40)
+shape = SubResource("RectangleShape2D_7e0sq")
+
+[node name="StaticBody2D3" type="Area2D" parent="." unique_id=1539075830]
+script = ExtResource("3_j5yw3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=422911439]
+position = Vector2(470, 601)
+shape = SubResource("RectangleShape2D_mhj1p")
+
+[connection signal="body_entered" from="StaticBody2D3" to="StaticBody2D3" method="_on_body_entered"]
