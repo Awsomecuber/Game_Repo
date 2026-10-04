@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://52ga3pufar6u"]
+
+[ext_resource type="Texture2D" uid="uid://b21bi8fsner2j" path="res://Assets/Cookie.png" id="1_qld4a"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ebmjs"]
+bounce = 0.2
+absorbent = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f8ccx"]
+radius = 14.035668
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=909786580 groups=["Cookie"]]
+collision_layer = 2
+collision_mask = 5
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_ebmjs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=140514910]
+scale = Vector2(1.2, 1.2)
+shape = SubResource("CircleShape2D_f8ccx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=691535223]
+texture_filter = 1
+position = Vector2(0, 2.9802322e-08)
+texture = ExtResource("1_qld4a")

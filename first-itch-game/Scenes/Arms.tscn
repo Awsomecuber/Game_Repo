@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://hd1suxyg8j25"]
 
+[ext_resource type="Texture2D" uid="uid://crb3g617w3elf" path="res://Assets/Leg.png" id="1_7okav"]
 [ext_resource type="Script" uid="uid://bjusf8j56ex7m" path="res://Script/Mouse.gd" id="1_m208y"]
 [ext_resource type="Script" uid="uid://c7hti84t47a57" path="res://Script/Knee.gd" id="1_tx8q2"]
+[ext_resource type="Texture2D" uid="uid://bpfqm2742bolj" path="res://Assets/Legwsock.png" id="3_6udm8"]
+[ext_resource type="Texture2D" uid="uid://usr438220v1n" path="res://Assets/Foot.png" id="5_un3f1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8ccx"]
 
@@ -13,7 +16,7 @@ height = 92.0
 bounce = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m208y"]
-size = Vector2(80.408165, 29.025482)
+size = Vector2(45.306126, 29.025482)
 
 [node name="RigidBody2D" type="StaticBody2D" unique_id=1475512528]
 
@@ -34,6 +37,12 @@ angular_limit_upper = 3.1415927
 [node name="1" type="RigidBody2D" parent="." unique_id=193350188]
 position = Vector2(0, -7.485)
 
+[node name="Sprite2D" type="Sprite2D" parent="1" unique_id=1746943645]
+texture_filter = 1
+position = Vector2(0.5, -0.05500102)
+scale = Vector2(1.34375, 3.8412495)
+texture = ExtResource("1_7okav")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="1" unique_id=733057316]
 shape = SubResource("CapsuleShape2D_f8ccx")
 
@@ -51,45 +60,41 @@ angular_limit_upper = 0.5235988
 position = Vector2(0, 85.285)
 script = ExtResource("1_tx8q2")
 
+[node name="Sprite2D" type="Sprite2D" parent="2" unique_id=1675804257]
+texture_filter = 1
+position = Vector2(0.535, -0.78499794)
+scale = Vector2(1.344, 3.8437505)
+texture = ExtResource("3_6udm8")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="2" unique_id=81175395]
 shape = SubResource("CapsuleShape2D_f8ccx")
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="." unique_id=168143346]
 position = Vector2(0, 131.62)
 node_a = NodePath("../2")
-node_b = NodePath("../4")
+node_b = NodePath("../Hand")
 bias = 0.5
 disable_collision = false
 angular_limit_enabled = true
 angular_limit_lower = -0.5235988
 angular_limit_upper = 0.5235988
 
-[node name="4" type="RigidBody2D" parent="." unique_id=474622824]
-position = Vector2(0, 178.44)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="4" unique_id=875948810]
-shape = SubResource("CapsuleShape2D_f8ccx")
-
-[node name="PinJoint2D5" type="PinJoint2D" parent="." unique_id=92507209]
-position = Vector2(0, 225.48)
-node_a = NodePath("../4")
-node_b = NodePath("../Hand")
-bias = 0.9
-disable_collision = false
-angular_limit_enabled = true
-angular_limit_lower = -1.5707964
-angular_limit_upper = 1.5707964
-
 [node name="Hand" type="RigidBody2D" parent="." unique_id=1187868923]
-position = Vector2(0, 246.58)
+position = Vector2(0, 150.11)
 scale = Vector2(0.98, 0.98)
 input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_25osk")
 gravity_scale = 0.0
 script = ExtResource("1_m208y")
 
+[node name="Sprite2D" type="Sprite2D" parent="Hand" unique_id=1724283675]
+texture_filter = 1
+position = Vector2(18.367344, -3.6530573)
+scale = Vector2(1.4885205, 1.2838014)
+texture = ExtResource("5_un3f1")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hand" unique_id=188633442]
-position = Vector2(30.204086, -4.512726)
+position = Vector2(18.163265, -4.673477)
 shape = SubResource("RectangleShape2D_m208y")
 
 [connection signal="mouse_entered" from="Hand" to="." method="_on_hand_mouse_entered"]

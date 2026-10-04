@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b3ye8fxuqmlxj"]
 
 [ext_resource type="Script" uid="uid://qs2qkg7yqy6x" path="res://Script/ball.gd" id="1_d60mj"]
+[ext_resource type="Texture2D" uid="uid://bim8bt1gk86mp" path="res://Assets/Verity.png" id="2_ij5cq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_25osk"]
 friction = 0.0
@@ -17,5 +18,11 @@ script = ExtResource("1_d60mj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=773859061]
 shape = SubResource("CircleShape2D_f8ccx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1878096199]
+texture_filter = 1
+position = Vector2(0, -5.9604645e-08)
+scale = Vector2(1.34375, 1.28125)
+texture = ExtResource("2_ij5cq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
