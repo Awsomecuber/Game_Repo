@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dfom5wwdag21q"]
+
+[ext_resource type="Theme" uid="uid://xy48b2cuublb" path="res://Assets/Main_theme.tres" id="1_pxpin"]
+[ext_resource type="Script" uid="uid://cgsbljdmsfe5f" path="res://Scripts/win_screen.gd" id="2_hs5jh"]
+
+[node name="Win_Lose Screen" type="Control" unique_id=996447793]
+process_mode = 3
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pxpin")
+script = ExtResource("2_hs5jh")
+
+[node name="Panel" type="Panel" parent="." unique_id=664528624]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -356.0
+offset_top = -249.0
+offset_right = 340.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=84664211]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 239.0
+offset_right = 560.0
+offset_bottom = 338.0
+theme = ExtResource("1_pxpin")
+
+[node name="Retry" type="Button" parent="Panel/HBoxContainer" unique_id=1274523547]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_pxpin")
+text = "Retry"
+
+[node name="Menu" type="Button" parent="Panel/HBoxContainer" unique_id=1721975073]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_pxpin")
+text = "Menu"
+
+[node name="Next Level" type="Button" parent="Panel/HBoxContainer" unique_id=127246044]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_pxpin")
+text = "Next Level"
+
+[node name="Label" type="Label" parent="Panel" unique_id=593390573]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 95.0
+offset_right = 550.0
+offset_bottom = 169.0
+theme = ExtResource("1_pxpin")
+text = "YUMMY!!!"
+
+[connection signal="pressed" from="Panel/HBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Next Level" to="." method="_on_next_level_pressed"]

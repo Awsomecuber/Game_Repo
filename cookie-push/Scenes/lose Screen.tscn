@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bldndcl1dwbsb"]
+
+[ext_resource type="Theme" uid="uid://xy48b2cuublb" path="res://Assets/Main_theme.tres" id="1_klaom"]
+[ext_resource type="Script" uid="uid://b3mitn4d1rsv0" path="res://Scripts/lose_screen.gd" id="2_e4fag"]
+
+[node name="Win_Lose Screen" type="Control" unique_id=996447793]
+process_mode = 3
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_klaom")
+script = ExtResource("2_e4fag")
+
+[node name="Panel" type="Panel" parent="." unique_id=664528624]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -356.0
+offset_top = -249.0
+offset_right = 340.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=84664211]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 256.0
+offset_right = 635.0
+offset_bottom = 343.0
+theme = ExtResource("1_klaom")
+
+[node name="Retry" type="Button" parent="Panel/HBoxContainer" unique_id=1274523547]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_klaom")
+text = "Retry"
+
+[node name="Menu" type="Button" parent="Panel/HBoxContainer" unique_id=1721975073]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_klaom")
+text = "Menu"
+
+[node name="Label" type="Label" parent="Panel" unique_id=593390573]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 107.0
+offset_right = 655.0
+offset_bottom = 181.0
+theme = ExtResource("1_klaom")
+text = "Game Over!!!"
+
+[connection signal="pressed" from="Panel/HBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Menu" to="." method="_on_menu_pressed"]

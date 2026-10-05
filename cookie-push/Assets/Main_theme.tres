@@ -1,0 +1,58 @@
+[gd_resource type="Theme" format=3 uid="uid://xy48b2cuublb"]
+
+[ext_resource type="Texture2D" uid="uid://b5kappx61x5ui" path="res://Assets/Panel.png" id="1_mykmb"]
+[ext_resource type="FontFile" uid="uid://bo7oel6s2iwiy" path="res://Assets/VCR_OSD_MONO_1.001.ttf" id="2_dcijs"]
+[ext_resource type="Texture2D" uid="uid://c0m58q5k0wno7" path="res://Assets/Buttonl.png" id="2_lnmwu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_30jo7"]
+texture_margin_top = 2.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trhie"]
+texture = ExtResource("2_lnmwu")
+texture_margin_top = 2.0
+texture_margin_right = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_et5xi"]
+texture = ExtResource("2_lnmwu")
+texture_margin_left = 2.0
+texture_margin_top = 3.0
+texture_margin_right = 1.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(-1, 0, 31, 16)
+modulate_color = Color(1, 1, 1, 0.5058824)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f8ccx"]
+texture = ExtResource("2_lnmwu")
+texture_margin_left = 1.0
+texture_margin_top = 3.0
+texture_margin_right = 1.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70iwo"]
+texture = ExtResource("2_lnmwu")
+texture_margin_left = 1.0
+texture_margin_top = 3.0
+texture_margin_right = 1.0
+texture_margin_bottom = 2.0
+modulate_color = Color(0.7313316, 0.73133147, 0.73133165, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_we7kn"]
+texture = ExtResource("1_mykmb")
+texture_margin_left = 1.0
+texture_margin_top = 4.0
+texture_margin_right = 1.0
+texture_margin_bottom = 5.0
+
+[resource]
+default_font = ExtResource("2_dcijs")
+default_font_size = 20
+Button/font_sizes/font_size = 21
+Button/fonts/font = ExtResource("2_dcijs")
+Button/styles/disabled = SubResource("StyleBoxTexture_30jo7")
+Button/styles/focus = SubResource("StyleBoxTexture_trhie")
+Button/styles/hover = SubResource("StyleBoxTexture_et5xi")
+Button/styles/normal = SubResource("StyleBoxTexture_f8ccx")
+Button/styles/pressed = SubResource("StyleBoxTexture_70iwo")
+Label/font_sizes/font_size = 81
+Panel/styles/panel = SubResource("StyleBoxTexture_we7kn")
