@@ -8,7 +8,7 @@ const lose_screen = preload("res://Scenes/lose Screen.tscn")
 const win_screen = preload("res://Scenes/win Screen.tscn")
 var lose
 var win
-@onready var guy: RigidBody2D = $Guy
+@onready var panda: RigidBody2D = $Panda
 var results
 
 func _ready() -> void:
@@ -29,7 +29,7 @@ func _physics_process(_delta: float) -> void:
 	if wake_meter >= wake_up:
 		results = "Lose"
 		
-	if guy.ate == true:
+	if panda.ate == true:
 		results = "Won"
 	
 	match results:

@@ -8,12 +8,6 @@
 rough = true
 absorbent = true
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jony2"]
-size = Vector2(32.1608, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8ccx"]
-size = Vector2(20.811098, 8.385278)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_s5xhn"]
 atlas = ExtResource("2_y8ag8")
 region = Rect2(0, 0, 32, 32)
@@ -69,6 +63,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jony2"]
+size = Vector2(30.94984, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8ccx"]
+size = Vector2(20.811098, 8.385278)
+
 [node name="Guy" type="RigidBody2D" unique_id=913249797]
 collision_layer = 4
 collision_mask = 3
@@ -77,8 +77,17 @@ contact_monitor = true
 max_contacts_reported = 4
 script = ExtResource("1_y8ag8")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=967624822]
+texture_filter = 1
+position = Vector2(0, -7)
+scale = Vector2(1.874, 1.8)
+sprite_frames = SubResource("SpriteFrames_f8ccx")
+animation = &"Sleeping"
+autoplay = "Sleeping"
+frame_progress = 0.6002224
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=509839907]
-position = Vector2(0.99999994, 2.9999998)
+position = Vector2(-1.1920929e-07, 2.999999)
 scale = Vector2(1.874, 1.8)
 shape = SubResource("RectangleShape2D_jony2")
 
@@ -86,15 +95,5 @@ shape = SubResource("RectangleShape2D_jony2")
 position = Vector2(4.5, -23.45325)
 scale = Vector2(1.874, 1.8)
 shape = SubResource("RectangleShape2D_f8ccx")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=967624822]
-texture_filter = 1
-position = Vector2(0, -7)
-scale = Vector2(1.874, 1.8)
-sprite_frames = SubResource("SpriteFrames_f8ccx")
-animation = &"Waking up"
-autoplay = "Sleeping"
-frame = 3
-frame_progress = 1.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
