@@ -10,13 +10,16 @@ var lose
 var win
 @onready var panda: RigidBody2D = $Panda
 var results
+@onready var lvl_name = scene_file_path.get_file().get_basename()
 
 func _ready() -> void:
 	lose = lose_screen.instantiate()
 	win = win_screen.instantiate()
+	print(lvl_name)
+	print(Global.completed_levels.get(lvl_name))
+	
+	
 
-func _process(_delta: float) -> void:
-	pass
 
 func _physics_process(_delta: float) -> void:
 	progress_bar.value  = wake_meter
@@ -31,6 +34,9 @@ func _physics_process(_delta: float) -> void:
 		
 	if panda.ate == true:
 		results = "Won"
+		Global.completed_levels[lvl_name] = true
+		Global.completed(lvl_name.to_int())
+		
 	
 	match results:
 		"Won":

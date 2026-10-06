@@ -50,6 +50,7 @@ theme = ExtResource("1_klaom")
 text = "Menu"
 
 [node name="Label" type="Label" parent="Panel" unique_id=593390573]
+process_mode = 3
 layout_mode = 0
 offset_left = 85.0
 offset_top = 107.0

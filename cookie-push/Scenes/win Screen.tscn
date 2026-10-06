@@ -50,6 +50,7 @@ theme = ExtResource("1_pxpin")
 text = "Menu"
 
 [node name="Next Level" type="Button" parent="Panel/HBoxContainer" unique_id=127246044]
+process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_pxpin")

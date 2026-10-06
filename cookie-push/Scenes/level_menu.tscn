@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://7rjcxphl3vkk"]
 
 [ext_resource type="Theme" uid="uid://xy48b2cuublb" path="res://Assets/Main_theme.tres" id="1_ymr0u"]
-[ext_resource type="Texture2D" uid="uid://ygs3iqpm66rc" path="res://Assets/Cookie/Level_button.png" id="2_4bw2l"]
-[ext_resource type="Texture2D" uid="uid://en4sevbrx66h" path="res://Assets/Cookie/Level_button_pressed.png" id="3_4bw2l"]
-[ext_resource type="Texture2D" uid="uid://v8e0nlx3icl3" path="res://Assets/Cookie/Level_button_hover.png" id="4_64jxr"]
-[ext_resource type="Texture2D" uid="uid://v5vrb7pbr3d3" path="res://Assets/Cookie/Level_button_locked.png" id="5_51how"]
+[ext_resource type="Script" uid="uid://c4171iu8tllam" path="res://Scripts/level_menu.gd" id="2_iio8b"]
+[ext_resource type="PackedScene" uid="uid://cfpnxwrrgqex7" path="res://Scenes/lvl_button.tscn" id="3_4bw2l"]
 
 [node name="Level Menu" type="Control" unique_id=975419437]
+process_mode = 3
 layout_mode = 3
 anchor_right = 0.16100001
 anchor_bottom = 0.24000001
@@ -15,6 +14,7 @@ offset_bottom = 492.47998
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ymr0u")
+script = ExtResource("2_iio8b")
 
 [node name="BoxContainer" type="GridContainer" parent="." unique_id=578321120]
 layout_mode = 1
@@ -32,522 +32,140 @@ grow_vertical = 2
 scale = Vector2(3.31, 3.31)
 columns = 5
 
-[node name="1" type="TextureButton" parent="BoxContainer" unique_id=1076827533]
-texture_filter = 1
+[node name="1" parent="BoxContainer" unique_id=1510675959 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/1" unique_id=1812524451]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
-text = "1"
-
-[node name="2" type="TextureButton" parent="BoxContainer" unique_id=420222204]
-texture_filter = 1
+[node name="2" parent="BoxContainer" unique_id=1216138214 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/2" unique_id=2115573213]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/2" index="0" unique_id=775698249]
 text = "2"
 
-[node name="3" type="TextureButton" parent="BoxContainer" unique_id=1661547809]
-texture_filter = 1
+[node name="3" parent="BoxContainer" unique_id=1577732934 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/3" unique_id=1970658956]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/3" index="0" unique_id=775698249]
 text = "3"
 
-[node name="4" type="TextureButton" parent="BoxContainer" unique_id=598664265]
-texture_filter = 1
+[node name="4" parent="BoxContainer" unique_id=52127382 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/4" unique_id=654367882]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/4" index="0" unique_id=775698249]
 text = "4"
 
-[node name="5" type="TextureButton" parent="BoxContainer" unique_id=1564296935]
-texture_filter = 1
+[node name="5" parent="BoxContainer" unique_id=1979662893 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/5" unique_id=727493767]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/5" index="0" unique_id=775698249]
 text = "5"
 
-[node name="6" type="TextureButton" parent="BoxContainer" unique_id=1639764636]
-texture_filter = 1
+[node name="6" parent="BoxContainer" unique_id=1602900422 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/6" unique_id=1021924845]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/6" index="0" unique_id=775698249]
 text = "6"
 
-[node name="7" type="TextureButton" parent="BoxContainer" unique_id=1911350717]
-texture_filter = 1
+[node name="7" parent="BoxContainer" unique_id=101983346 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/7" unique_id=1780620008]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/7" index="0" unique_id=775698249]
 text = "7"
 
-[node name="8" type="TextureButton" parent="BoxContainer" unique_id=1603663989]
-texture_filter = 1
+[node name="8" parent="BoxContainer" unique_id=1233239851 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/8" unique_id=274839195]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/8" index="0" unique_id=775698249]
 text = "8"
 
-[node name="9" type="TextureButton" parent="BoxContainer" unique_id=601863528]
-texture_filter = 1
+[node name="9" parent="BoxContainer" unique_id=493347238 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/9" unique_id=453222513]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/9" index="0" unique_id=775698249]
 text = "9"
 
-[node name="10" type="TextureButton" parent="BoxContainer" unique_id=274360304]
-texture_filter = 1
+[node name="10" parent="BoxContainer" unique_id=858119351 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/10" unique_id=119052687]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/10" index="0" unique_id=775698249]
 text = "10"
 
-[node name="11" type="TextureButton" parent="BoxContainer" unique_id=1171905853]
-texture_filter = 1
+[node name="11" parent="BoxContainer" unique_id=1146237874 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/11" unique_id=1206855155]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/11" index="0" unique_id=775698249]
 text = "11"
 
-[node name="12" type="TextureButton" parent="BoxContainer" unique_id=298015119]
-texture_filter = 1
+[node name="12" parent="BoxContainer" unique_id=113373068 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/12" unique_id=459231030]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/12" index="0" unique_id=775698249]
 text = "12"
 
-[node name="13" type="TextureButton" parent="BoxContainer" unique_id=982709929]
-texture_filter = 1
+[node name="13" parent="BoxContainer" unique_id=624472252 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/13" unique_id=137222583]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/13" index="0" unique_id=775698249]
 text = "13"
 
-[node name="14" type="TextureButton" parent="BoxContainer" unique_id=1122115870]
-texture_filter = 1
+[node name="14" parent="BoxContainer" unique_id=1632774832 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/14" unique_id=1327865066]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/14" index="0" unique_id=775698249]
 text = "14"
 
-[node name="15" type="TextureButton" parent="BoxContainer" unique_id=275535034]
-texture_filter = 1
+[node name="15" parent="BoxContainer" unique_id=704541125 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/15" unique_id=1162334692]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/15" index="0" unique_id=775698249]
 text = "15"
 
-[node name="16" type="TextureButton" parent="BoxContainer" unique_id=1646920586]
-texture_filter = 1
+[node name="16" parent="BoxContainer" unique_id=685645830 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/16" unique_id=1717406809]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/16" index="0" unique_id=775698249]
 text = "16"
 
-[node name="17" type="TextureButton" parent="BoxContainer" unique_id=2028651150]
-texture_filter = 1
+[node name="17" parent="BoxContainer" unique_id=923097233 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/17" unique_id=1204983753]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/17" index="0" unique_id=775698249]
 text = "17"
 
-[node name="18" type="TextureButton" parent="BoxContainer" unique_id=857638838]
-texture_filter = 1
+[node name="18" parent="BoxContainer" unique_id=1022561865 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/18" unique_id=620955720]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/18" index="0" unique_id=775698249]
 text = "18"
 
-[node name="19" type="TextureButton" parent="BoxContainer" unique_id=1623361909]
-texture_filter = 1
+[node name="19" parent="BoxContainer" unique_id=229393665 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/19" unique_id=638416128]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/19" index="0" unique_id=775698249]
 text = "19"
 
-[node name="20" type="TextureButton" parent="BoxContainer" unique_id=382408329]
-texture_filter = 1
+[node name="20" parent="BoxContainer" unique_id=2095324708 instance=ExtResource("3_4bw2l")]
 layout_mode = 2
-texture_normal = ExtResource("2_4bw2l")
-texture_pressed = ExtResource("3_4bw2l")
-texture_hover = ExtResource("4_64jxr")
-texture_disabled = ExtResource("5_51how")
 
-[node name="Label" type="Label" parent="BoxContainer/20" unique_id=1747355032]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -10.0
-offset_right = 6.0
-offset_bottom = 8.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
-theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
-theme_override_font_sizes/font_size = 20
+[node name="Label" parent="BoxContainer/20" index="0" unique_id=775698249]
 text = "20"
+
+[editable path="BoxContainer/1"]
+[editable path="BoxContainer/2"]
+[editable path="BoxContainer/3"]
+[editable path="BoxContainer/4"]
+[editable path="BoxContainer/5"]
+[editable path="BoxContainer/6"]
+[editable path="BoxContainer/7"]
+[editable path="BoxContainer/8"]
+[editable path="BoxContainer/9"]
+[editable path="BoxContainer/10"]
+[editable path="BoxContainer/11"]
+[editable path="BoxContainer/12"]
+[editable path="BoxContainer/13"]
+[editable path="BoxContainer/14"]
+[editable path="BoxContainer/15"]
+[editable path="BoxContainer/16"]
+[editable path="BoxContainer/17"]
+[editable path="BoxContainer/18"]
+[editable path="BoxContainer/19"]
+[editable path="BoxContainer/20"]

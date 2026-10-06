@@ -64,10 +64,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jony2"]
-size = Vector2(30.94984, 20)
+size = Vector2(41.622196, 26.11111)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8ccx"]
-size = Vector2(20.811098, 8.385278)
+size = Vector2(24.546425, 12.777779)
 
 [node name="Guy" type="RigidBody2D" unique_id=913249797]
 collision_layer = 4
@@ -80,19 +80,19 @@ script = ExtResource("1_y8ag8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=967624822]
 texture_filter = 1
 position = Vector2(0, -7)
-scale = Vector2(1.874, 1.8)
+scale = Vector2(2.514, 2.429)
 sprite_frames = SubResource("SpriteFrames_f8ccx")
 animation = &"Sleeping"
 autoplay = "Sleeping"
 frame_progress = 0.6002224
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=509839907]
-position = Vector2(-1.1920929e-07, 2.999999)
+position = Vector2(0, 8.499998)
 scale = Vector2(1.874, 1.8)
 shape = SubResource("RectangleShape2D_jony2")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=760026860]
-position = Vector2(4.5, -23.45325)
+position = Vector2(4.999999, -26.5)
 scale = Vector2(1.874, 1.8)
 shape = SubResource("RectangleShape2D_f8ccx")
 

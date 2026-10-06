@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="cookie push"
-run/main_scene="uid://bhu41e77iarbp"
+run/main_scene="uid://dk5ya0f0o1puu"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

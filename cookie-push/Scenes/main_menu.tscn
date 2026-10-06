@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dk5ya0f0o1puu"]
 
 [ext_resource type="Theme" uid="uid://xy48b2cuublb" path="res://Assets/Main_theme.tres" id="1_28flt"]
+[ext_resource type="Script" uid="uid://ce3tby0lppfqk" path="res://Scripts/main_menu.gd" id="2_48xlc"]
 
 [node name="Main Menu" type="Control" unique_id=596629708]
 texture_filter = 1
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_28flt")
+script = ExtResource("2_48xlc")
 
 [node name="Button" type="Button" parent="." unique_id=660426632]
 layout_mode = 1
@@ -27,3 +29,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_28flt")
 text = "Start"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

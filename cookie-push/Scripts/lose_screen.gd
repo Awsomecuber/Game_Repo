@@ -7,4 +7,5 @@ func _on_retry_pressed() -> void:
 	
 
 func _on_menu_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/level_menu.tscn")
