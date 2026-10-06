@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dvs8fiy6ktkka"]
 
-[ext_resource type="Texture2D" uid="uid://ygs3iqpm66rc" path="res://Assets/Level_button.png" id="1_mv2v0"]
-[ext_resource type="Texture2D" uid="uid://en4sevbrx66h" path="res://Assets/Level_button_pressed.png" id="2_ujtuy"]
-[ext_resource type="Texture2D" uid="uid://v8e0nlx3icl3" path="res://Assets/Level_button_hover.png" id="3_8wqm7"]
-[ext_resource type="Texture2D" uid="uid://v5vrb7pbr3d3" path="res://Assets/Level_button_locked.png" id="4_dxldl"]
+[ext_resource type="Texture2D" uid="uid://ygs3iqpm66rc" path="res://Assets/Cookie/Level_button.png" id="1_mv2v0"]
+[ext_resource type="Texture2D" uid="uid://en4sevbrx66h" path="res://Assets/Cookie/Level_button_pressed.png" id="2_ujtuy"]
+[ext_resource type="Texture2D" uid="uid://v8e0nlx3icl3" path="res://Assets/Cookie/Level_button_hover.png" id="3_8wqm7"]
+[ext_resource type="Texture2D" uid="uid://v5vrb7pbr3d3" path="res://Assets/Cookie/Level_button_locked.png" id="4_dxldl"]
 
 [node name="1" type="TextureButton" unique_id=1505583003]
 texture_filter = 1

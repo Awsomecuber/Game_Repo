@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://52ga3pufar6u"]
 
-[ext_resource type="Texture2D" uid="uid://b21bi8fsner2j" path="res://Assets/Cookie.png" id="1_qld4a"]
+[ext_resource type="Texture2D" uid="uid://b21bi8fsner2j" path="res://Assets/Cookie/Cookie.png" id="1_qld4a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ebmjs"]
 bounce = 0.2

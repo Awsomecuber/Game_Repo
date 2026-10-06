@@ -1,8 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://xy48b2cuublb"]
 
-[ext_resource type="Texture2D" uid="uid://b5kappx61x5ui" path="res://Assets/Panel.png" id="1_mykmb"]
+[ext_resource type="Texture2D" uid="uid://b5kappx61x5ui" path="res://Assets/UI/Panel.png" id="1_mykmb"]
 [ext_resource type="FontFile" uid="uid://bo7oel6s2iwiy" path="res://Assets/VCR_OSD_MONO_1.001.ttf" id="2_dcijs"]
-[ext_resource type="Texture2D" uid="uid://c0m58q5k0wno7" path="res://Assets/Buttonl.png" id="2_lnmwu"]
+[ext_resource type="Texture2D" uid="uid://c0m58q5k0wno7" path="res://Assets/UI/Buttonl.png" id="2_lnmwu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_30jo7"]
 texture_margin_top = 2.0

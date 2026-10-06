@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://7rjcxphl3vkk"]
 
 [ext_resource type="Theme" uid="uid://xy48b2cuublb" path="res://Assets/Main_theme.tres" id="1_ymr0u"]
-[ext_resource type="Texture2D" uid="uid://ygs3iqpm66rc" path="res://Assets/Level_button.png" id="2_4bw2l"]
-[ext_resource type="Texture2D" uid="uid://en4sevbrx66h" path="res://Assets/Level_button_pressed.png" id="3_4bw2l"]
-[ext_resource type="Texture2D" uid="uid://v8e0nlx3icl3" path="res://Assets/Level_button_hover.png" id="4_64jxr"]
-[ext_resource type="Texture2D" uid="uid://v5vrb7pbr3d3" path="res://Assets/Level_button_locked.png" id="5_51how"]
+[ext_resource type="Texture2D" uid="uid://ygs3iqpm66rc" path="res://Assets/Cookie/Level_button.png" id="2_4bw2l"]
+[ext_resource type="Texture2D" uid="uid://en4sevbrx66h" path="res://Assets/Cookie/Level_button_pressed.png" id="3_4bw2l"]
+[ext_resource type="Texture2D" uid="uid://v8e0nlx3icl3" path="res://Assets/Cookie/Level_button_hover.png" id="4_64jxr"]
+[ext_resource type="Texture2D" uid="uid://v5vrb7pbr3d3" path="res://Assets/Cookie/Level_button_locked.png" id="5_51how"]
 
 [node name="Level Menu" type="Control" unique_id=975419437]
 layout_mode = 3

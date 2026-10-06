@@ -7,9 +7,9 @@
 [ext_resource type="Script" uid="uid://c65clghi7fyip" path="res://Scripts/Tilt_world.gd" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://2as0tier3nn7" path="res://Scenes/Panda.tscn" id="5_wowpa"]
 [ext_resource type="Theme" uid="uid://xy48b2cuublb" path="res://Assets/Main_theme.tres" id="6_1l0tm"]
-[ext_resource type="Texture2D" uid="uid://ygs3iqpm66rc" path="res://Assets/Level_button.png" id="7_ldgsr"]
-[ext_resource type="Texture2D" uid="uid://en4sevbrx66h" path="res://Assets/Level_button_pressed.png" id="8_o5yvi"]
-[ext_resource type="Texture2D" uid="uid://v8e0nlx3icl3" path="res://Assets/Level_button_hover.png" id="9_rku1e"]
+[ext_resource type="Texture2D" uid="uid://ygs3iqpm66rc" path="res://Assets/Cookie/Level_button.png" id="7_ldgsr"]
+[ext_resource type="Texture2D" uid="uid://en4sevbrx66h" path="res://Assets/Cookie/Level_button_pressed.png" id="8_o5yvi"]
+[ext_resource type="Texture2D" uid="uid://v8e0nlx3icl3" path="res://Assets/Cookie/Level_button_hover.png" id="9_rku1e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dryh"]
 texture = ExtResource("3_3dryh")
