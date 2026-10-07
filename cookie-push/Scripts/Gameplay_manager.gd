@@ -26,9 +26,9 @@ func _physics_process(_delta: float) -> void:
 	progress_bar.value  = wake_meter
 	wake_meter = clamp(wake_meter, sleep, wake_up)
 	if Input.is_action_pressed("tilt_left") or Input.is_action_pressed("tilt_right"):
-		wake_meter += 2
+		wake_meter += 1
 	else:
-		wake_meter -= 1
+		wake_meter -= 4
 		
 	if wake_meter >= wake_up:
 		results = "Lose"
@@ -50,5 +50,6 @@ func _physics_process(_delta: float) -> void:
 			pass
 			
 
-func _on_cookie_pressed() -> void:
+
+func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/level_menu.tscn")

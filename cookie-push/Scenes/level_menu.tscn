@@ -9,8 +9,8 @@ process_mode = 3
 layout_mode = 3
 anchor_right = 0.16100001
 anchor_bottom = 0.24000001
-offset_right = 966.52795
-offset_bottom = 492.47998
+offset_right = 910.12
+offset_bottom = 549.2
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ymr0u")
@@ -148,6 +148,16 @@ layout_mode = 2
 
 [node name="Label" parent="BoxContainer/20" index="0" unique_id=775698249]
 text = "20"
+
+[node name="Button" type="Button" parent="." unique_id=848199896]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 613.0
+offset_right = 196.0
+offset_bottom = 675.0
+text = "Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 
 [editable path="BoxContainer/1"]
 [editable path="BoxContainer/2"]

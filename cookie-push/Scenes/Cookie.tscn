@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://n36x4on61pau" path="res://Scripts/cookie.gd" id="1_ix3f7"]
 [ext_resource type="Texture2D" uid="uid://b21bi8fsner2j" path="res://Assets/Cookie/Cookie.png" id="1_qld4a"]
+[ext_resource type="Texture2D" uid="uid://vw3scrghgfxg" path="res://Assets/Cookie/Cookie_breaking.png" id="2_3nnyp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ebmjs"]
 bounce = 0.2
@@ -9,6 +10,75 @@ absorbent = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f8ccx"]
 radius = 14.035668
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sonkf"]
+atlas = ExtResource("2_3nnyp")
+region = Rect2(16, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw0iv"]
+atlas = ExtResource("2_3nnyp")
+region = Rect2(80, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp861"]
+atlas = ExtResource("2_3nnyp")
+region = Rect2(139, 11, 42, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oea3r"]
+atlas = ExtResource("2_3nnyp")
+region = Rect2(199, 11, 49, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jon5c"]
+atlas = ExtResource("2_3nnyp")
+region = Rect2(262, 9, 51, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0x8ua"]
+atlas = ExtResource("2_3nnyp")
+region = Rect2(325, 6, 53, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hhhv"]
+atlas = ExtResource("2_3nnyp")
+region = Rect2(387, 4, 57, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w02ch"]
+atlas = ExtResource("1_qld4a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8ccx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sonkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kw0iv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pp861")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oea3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jon5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0x8ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hhhv")
+}],
+"loop": 0,
+"name": &"Cookie Break",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w02ch")
+}],
+"loop": 1,
+"name": &"Null",
+"speed": 5.0
+}]
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=909786580 groups=["Cookie"]]
 collision_layer = 2
@@ -21,7 +91,9 @@ script = ExtResource("1_ix3f7")
 scale = Vector2(1.2, 1.2)
 shape = SubResource("CircleShape2D_f8ccx")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=691535223]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1961043379]
 texture_filter = 1
 position = Vector2(0, 2.9802322e-08)
-texture = ExtResource("1_qld4a")
+sprite_frames = SubResource("SpriteFrames_f8ccx")
+animation = &"Null"
+autoplay = "Null"
