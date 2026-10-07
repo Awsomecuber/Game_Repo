@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://52ga3pufar6u"]
 
+[ext_resource type="Script" uid="uid://n36x4on61pau" path="res://Scripts/cookie.gd" id="1_ix3f7"]
 [ext_resource type="Texture2D" uid="uid://b21bi8fsner2j" path="res://Assets/Cookie/Cookie.png" id="1_qld4a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ebmjs"]
@@ -14,6 +15,7 @@ collision_layer = 2
 collision_mask = 5
 mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_ebmjs")
+script = ExtResource("1_ix3f7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=140514910]
 scale = Vector2(1.2, 1.2)

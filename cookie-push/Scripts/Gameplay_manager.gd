@@ -4,6 +4,7 @@ var wake_meter: int = 0
 var sleep: int = 1
 var wake_up: int = 110
 @onready var progress_bar: ProgressBar = $Camera2D/Control/ProgressBar
+
 const lose_screen = preload("res://Scenes/lose Screen.tscn")
 const win_screen = preload("res://Scenes/win Screen.tscn")
 var lose
@@ -48,7 +49,6 @@ func _physics_process(_delta: float) -> void:
 		_:
 			pass
 			
-	
-		
-	
-		
+
+func _on_cookie_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/level_menu.tscn")
