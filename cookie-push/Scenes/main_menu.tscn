@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://xy48b2cuublb" path="res://Assets/Main_theme.tres" id="1_28flt"]
 [ext_resource type="Script" uid="uid://ce3tby0lppfqk" path="res://Scripts/main_menu.gd" id="2_48xlc"]
+[ext_resource type="AudioStream" uid="uid://bxot804japltv" path="res://Music/Gameplay.wav" id="3_1ehe0"]
 
 [node name="Main Menu" type="Control" unique_id=596629708]
 texture_filter = 1
@@ -43,5 +44,10 @@ offset_right = 288.0
 offset_bottom = 74.719986
 grow_horizontal = 2
 text = "Cookie Mo'To"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1172104151]
+stream = ExtResource("3_1ehe0")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

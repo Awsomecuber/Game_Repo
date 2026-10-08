@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://xy48b2cuublb" path="res://Assets/Main_theme.tres" id="1_ymr0u"]
 [ext_resource type="Script" uid="uid://c4171iu8tllam" path="res://Scripts/level_menu.gd" id="2_iio8b"]
 [ext_resource type="PackedScene" uid="uid://cfpnxwrrgqex7" path="res://Scenes/lvl_button.tscn" id="3_4bw2l"]
+[ext_resource type="AudioStream" uid="uid://87r3wqr4nbpy" path="res://Music/Main Theme.wav" id="4_64jxr"]
 
 [node name="Level Menu" type="Control" unique_id=975419437]
 process_mode = 3
@@ -156,6 +157,10 @@ offset_top = 613.0
 offset_right = 196.0
 offset_bottom = 675.0
 text = "Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=150538429]
+stream = ExtResource("4_64jxr")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 

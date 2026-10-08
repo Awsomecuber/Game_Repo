@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://xy48b2cuublb" path="res://Assets/Main_theme.tres" id="1_klaom"]
 [ext_resource type="Script" uid="uid://b3mitn4d1rsv0" path="res://Scripts/lose_screen.gd" id="2_e4fag"]
+[ext_resource type="AudioStream" uid="uid://cd0oh6w7so7f8" path="res://Music/Game Over.wav" id="3_jwl41"]
 
 [node name="Win_Lose Screen" type="Control" unique_id=996447793]
 process_mode = 3
@@ -52,13 +53,17 @@ text = "Menu"
 [node name="Label" type="Label" parent="Panel" unique_id=593390573]
 process_mode = 3
 layout_mode = 0
-offset_left = 85.0
-offset_top = 107.0
-offset_right = 655.0
-offset_bottom = 181.0
+offset_left = 145.0
+offset_top = 104.0
+offset_right = 715.0
+offset_bottom = 178.0
 theme = ExtResource("1_klaom")
 theme_override_font_sizes/font_size = 72
-text = "He woke up!!!"
+text = "You Lose!!!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1168554543]
+stream = ExtResource("3_jwl41")
+autoplay = true
 
 [connection signal="pressed" from="Panel/HBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Menu" to="." method="_on_menu_pressed"]

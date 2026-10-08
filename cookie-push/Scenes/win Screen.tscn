@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://xy48b2cuublb" path="res://Assets/Main_theme.tres" id="1_pxpin"]
 [ext_resource type="Script" uid="uid://cgsbljdmsfe5f" path="res://Scripts/win_screen.gd" id="2_hs5jh"]
+[ext_resource type="AudioStream" uid="uid://ckq5ksfyo0rn" path="res://Music/Victory.wav" id="3_01hkw"]
 
 [node name="Win_Lose Screen" type="Control" unique_id=996447793]
 process_mode = 3
@@ -64,6 +65,10 @@ offset_right = 550.0
 offset_bottom = 169.0
 theme = ExtResource("1_pxpin")
 text = "YUMMY!!!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1409846271]
+stream = ExtResource("3_01hkw")
+autoplay = true
 
 [connection signal="pressed" from="Panel/HBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/Menu" to="." method="_on_menu_pressed"]
