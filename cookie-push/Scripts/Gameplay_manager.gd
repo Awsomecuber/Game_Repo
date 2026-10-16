@@ -6,6 +6,7 @@ var wake_up: int = 110
 @onready var progress_bar: ProgressBar = $Camera2D/Control/ProgressBar
 @onready var area_2d: Area2D = get_node_or_null("TileMapLayer/Area2D")
 @onready var cookie: AnimatedSprite2D = $RigidBody2D/Sprite2D
+@onready var control: Control = $Camera2D/Control
 const lose_screen = preload("res://Scenes/lose Screen.tscn")
 const win_screen = preload("res://Scenes/win Screen.tscn")
 var lose
@@ -15,6 +16,7 @@ var results
 @onready var lvl_name = scene_file_path.get_file().get_basename()
 
 func _ready() -> void:
+	
 	lose = lose_screen.instantiate()
 	win = win_screen.instantiate()
 	print(lvl_name)

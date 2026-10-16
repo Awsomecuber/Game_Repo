@@ -91,60 +91,70 @@ layout_mode = 2
 text = "10"
 
 [node name="11" parent="BoxContainer" unique_id=1146237874 instance=ExtResource("3_4bw2l")]
+visible = false
 layout_mode = 2
 
 [node name="Label" parent="BoxContainer/11" index="0" unique_id=775698249]
 text = "11"
 
 [node name="12" parent="BoxContainer" unique_id=113373068 instance=ExtResource("3_4bw2l")]
+visible = false
 layout_mode = 2
 
 [node name="Label" parent="BoxContainer/12" index="0" unique_id=775698249]
 text = "12"
 
 [node name="13" parent="BoxContainer" unique_id=624472252 instance=ExtResource("3_4bw2l")]
+visible = false
 layout_mode = 2
 
 [node name="Label" parent="BoxContainer/13" index="0" unique_id=775698249]
 text = "13"
 
 [node name="14" parent="BoxContainer" unique_id=1632774832 instance=ExtResource("3_4bw2l")]
+visible = false
 layout_mode = 2
 
 [node name="Label" parent="BoxContainer/14" index="0" unique_id=775698249]
 text = "14"
 
 [node name="15" parent="BoxContainer" unique_id=704541125 instance=ExtResource("3_4bw2l")]
+visible = false
 layout_mode = 2
 
 [node name="Label" parent="BoxContainer/15" index="0" unique_id=775698249]
 text = "15"
 
 [node name="16" parent="BoxContainer" unique_id=685645830 instance=ExtResource("3_4bw2l")]
+visible = false
 layout_mode = 2
 
 [node name="Label" parent="BoxContainer/16" index="0" unique_id=775698249]
 text = "16"
 
 [node name="17" parent="BoxContainer" unique_id=923097233 instance=ExtResource("3_4bw2l")]
+visible = false
 layout_mode = 2
 
 [node name="Label" parent="BoxContainer/17" index="0" unique_id=775698249]
 text = "17"
 
 [node name="18" parent="BoxContainer" unique_id=1022561865 instance=ExtResource("3_4bw2l")]
+visible = false
 layout_mode = 2
 
 [node name="Label" parent="BoxContainer/18" index="0" unique_id=775698249]
 text = "18"
 
 [node name="19" parent="BoxContainer" unique_id=229393665 instance=ExtResource("3_4bw2l")]
+visible = false
 layout_mode = 2
 
 [node name="Label" parent="BoxContainer/19" index="0" unique_id=775698249]
 text = "19"
 
 [node name="20" parent="BoxContainer" unique_id=2095324708 instance=ExtResource("3_4bw2l")]
+visible = false
 layout_mode = 2
 
 [node name="Label" parent="BoxContainer/20" index="0" unique_id=775698249]
