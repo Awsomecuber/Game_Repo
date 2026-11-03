@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://rdbxfhxwr3y8" path="res://Ninja Assets/5. Mine Tileset - Starter Pack 16p/Mine_Tileset_1B_Background_16.png" id="4_2irst"]
 [ext_resource type="PackedScene" uid="uid://ctuoah55ua1rt" path="res://Scenes/enemy.tscn" id="7_fgofq"]
 [ext_resource type="PackedScene" uid="uid://ddfuw0cdfppi6" path="res://Scenes/touch_controls.tscn" id="8_2irst"]
+[ext_resource type="AudioStream" uid="uid://dbjplpa4qi1v3" path="res://Gameplay.wav" id="10_dahhg"]
+[ext_resource type="Script" uid="uid://ci4aidqtmsl46" path="res://Scenes/audio_stream_player_2d.gd" id="11_3so38"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bf53h"]
 texture = ExtResource("1_b2bpf")
@@ -304,3 +306,9 @@ position = Vector2(230, 2)
 
 [node name="Enemy3" parent="." unique_id=878438965 instance=ExtResource("7_fgofq")]
 position = Vector2(93, 150)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2055824607]
+stream = ExtResource("10_dahhg")
+autoplay = true
+panning_strength = 3.0
+script = ExtResource("11_3so38")

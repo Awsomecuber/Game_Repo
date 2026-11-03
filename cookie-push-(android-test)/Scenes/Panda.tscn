@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://2as0tier3nn7"]
+
+[ext_resource type="Script" uid="uid://vqykp8c67uxu" path="res://Scripts/Body.gd" id="1_y8ag8"]
+[ext_resource type="Texture2D" uid="uid://wnvpcaws8bfl" path="res://Assets/Panda/Sleeping.png" id="2_y8ag8"]
+[ext_resource type="Texture2D" uid="uid://cp6ncr1fd6in0" path="res://Assets/Panda/Waking Up.png" id="3_s5xhn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i6g32"]
+rough = true
+absorbent = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5xhn"]
+atlas = ExtResource("2_y8ag8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2mbu"]
+atlas = ExtResource("2_y8ag8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh7l2"]
+atlas = ExtResource("3_s5xhn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b8b7"]
+atlas = ExtResource("3_s5xhn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5adle"]
+atlas = ExtResource("3_s5xhn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y13ms"]
+atlas = ExtResource("3_s5xhn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8ccx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5xhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2mbu")
+}],
+"loop": 1,
+"name": &"Sleeping",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bh7l2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b8b7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5adle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y13ms")
+}],
+"loop": 0,
+"name": &"Waking up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jony2"]
+size = Vector2(41.622196, 26.11111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8ccx"]
+size = Vector2(24.546425, 12.777779)
+
+[node name="Guy" type="RigidBody2D" unique_id=913249797]
+collision_layer = 4
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_i6g32")
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("1_y8ag8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=967624822]
+texture_filter = 1
+position = Vector2(0, -7)
+scale = Vector2(2.514, 2.429)
+sprite_frames = SubResource("SpriteFrames_f8ccx")
+animation = &"Sleeping"
+autoplay = "Sleeping"
+frame_progress = 0.6002224
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=509839907]
+position = Vector2(0, 8.499998)
+scale = Vector2(1.874, 1.8)
+shape = SubResource("RectangleShape2D_jony2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=760026860]
+position = Vector2(4.999999, -26.5)
+scale = Vector2(1.874, 1.8)
+shape = SubResource("RectangleShape2D_f8ccx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

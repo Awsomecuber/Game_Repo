@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bim8bt1gk86mp" path="res://Assets/Verity.png" id="2_ij5cq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_25osk"]
-friction = 0.0
 bounce = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f8ccx"]
 radius = 22.022715
 
 [node name="Ball" type="RigidBody2D" unique_id=217203325]
+mass = 0.09
 physics_material_override = SubResource("PhysicsMaterial_25osk")
 contact_monitor = true
 max_contacts_reported = 4

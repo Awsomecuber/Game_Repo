@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://vhjisjikt8xy"]
+
+[ext_resource type="Theme" uid="uid://xy48b2cuublb" path="res://Assets/Main_theme.tres" id="1_tto2q"]
+[ext_resource type="Script" uid="uid://cgsbljdmsfe5f" path="res://Scripts/win_screen.gd" id="2_xmdp1"]
+[ext_resource type="AudioStream" uid="uid://ckq5ksfyo0rn" path="res://Music/Victory.wav" id="3_2vqys"]
+
+[node name="Win_Lose Screen" type="Control" unique_id=996447793]
+process_mode = 3
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1065.603
+offset_bottom = -704.061
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(33.062, 19.136)
+theme = ExtResource("1_tto2q")
+script = ExtResource("2_xmdp1")
+
+[node name="Panel" type="Panel" parent="." unique_id=664528624]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.4745626
+offset_top = 1.7244985
+offset_right = 13.459782
+offset_bottom = 18.603199
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=84664211]
+layout_mode = 0
+offset_left = 2.903636
+offset_top = 16.617893
+offset_right = 129.90364
+offset_bottom = 50.21948
+scale = Vector2(0.14, 0.14)
+theme = ExtResource("1_tto2q")
+
+[node name="Retry" type="Button" parent="Panel/HBoxContainer" unique_id=1274523547]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_tto2q")
+theme_override_font_sizes/font_size = 10
+text = "Retry"
+
+[node name="Menu" type="Button" parent="Panel/HBoxContainer" unique_id=1721975073]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_tto2q")
+theme_override_font_sizes/font_size = 10
+text = "Menu"
+
+[node name="Next Level" type="Button" parent="Panel/HBoxContainer" unique_id=127246044]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_tto2q")
+theme_override_font_sizes/font_size = 10
+text = "Next Level"
+
+[node name="Label" type="Label" parent="Panel" unique_id=593390573]
+layout_mode = 0
+offset_left = 3.6597912
+offset_top = 9.197325
+offset_right = 27.659792
+offset_bottom = 14.197325
+theme = ExtResource("1_tto2q")
+theme_override_font_sizes/font_size = 4
+text = "YUMMY!!!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1409846271]
+stream = ExtResource("3_2vqys")
+autoplay = true
+
+[connection signal="pressed" from="Panel/HBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Next Level" to="." method="_on_next_level_pressed"]

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cfpnxwrrgqex7"]
+
+[ext_resource type="Texture2D" uid="uid://ygs3iqpm66rc" path="res://Assets/Cookie/Level_button.png" id="1_sl4gm"]
+[ext_resource type="Texture2D" uid="uid://en4sevbrx66h" path="res://Assets/Cookie/Level_button_pressed.png" id="2_d2fy1"]
+[ext_resource type="Texture2D" uid="uid://v8e0nlx3icl3" path="res://Assets/Cookie/Level_button_hover.png" id="3_okpsa"]
+[ext_resource type="Texture2D" uid="uid://v5vrb7pbr3d3" path="res://Assets/Cookie/Level_button_locked.png" id="4_hy50y"]
+[ext_resource type="Script" uid="uid://4c8ik7oykquu" path="res://Scripts/lvl_button.gd" id="5_d2fy1"]
+
+[node name="1" type="TextureButton" unique_id=1510675959]
+texture_filter = 1
+disabled = true
+texture_normal = ExtResource("1_sl4gm")
+texture_pressed = ExtResource("2_d2fy1")
+texture_hover = ExtResource("3_okpsa")
+texture_disabled = ExtResource("4_hy50y")
+script = ExtResource("5_d2fy1")
+
+[node name="Label" type="Label" parent="." unique_id=775698249]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -10.0
+offset_right = 6.0
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.36078432, 0.2, 0.09019608, 1)
+theme_override_colors/font_shadow_color = Color(0.6666667, 0.46666667, 0.2, 1)
+theme_override_font_sizes/font_size = 20
+text = "1"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
