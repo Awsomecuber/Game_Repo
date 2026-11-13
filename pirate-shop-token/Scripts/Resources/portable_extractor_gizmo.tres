@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="base_treasure" format=3 uid="uid://bq55858o4o6ph"]
+
+[ext_resource type="Script" uid="uid://bwhiov8vpxokw" path="res://Scripts/Resources/base_treasure.gd" id="1_jt71q"]
+
+[resource]
+script = ExtResource("1_jt71q")
+Name = "Portable Extractor Gizmo"
+metadata/_custom_type_script = "uid://bwhiov8vpxokw"

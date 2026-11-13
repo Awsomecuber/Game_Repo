@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="base_treasure" format=3 uid="uid://dqimonyx3vxx2"]
+
+[ext_resource type="Script" uid="uid://bwhiov8vpxokw" path="res://Scripts/Resources/base_treasure.gd" id="1_o5daa"]
+
+[resource]
+script = ExtResource("1_o5daa")
+Name = "Jam Track"
+metadata/_custom_type_script = "uid://bwhiov8vpxokw"

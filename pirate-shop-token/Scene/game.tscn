@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://8rec184bekr1"]
+
+[ext_resource type="Script" uid="uid://bwhiov8vpxokw" path="res://Scripts/Resources/base_treasure.gd" id="1_mhtsl"]
+[ext_resource type="Script" uid="uid://dynl45thl8rp" path="res://Scripts/game.gd" id="1_yjs1f"]
+[ext_resource type="Resource" uid="uid://bgq5a60oefqil" path="res://Scripts/Resources/gold_skin.tres" id="3_vyw1f"]
+[ext_resource type="Resource" uid="uid://cia4dn5s1qi41" path="res://Scripts/Resources/pirate_token.tres" id="4_cvvdq"]
+[ext_resource type="Resource" uid="uid://xb5bxhsueu36" path="res://Scripts/Resources/car_skin.tres" id="5_m52p7"]
+[ext_resource type="Resource" uid="uid://ij5guovrwh7v" path="res://Scripts/Resources/back_bling.tres" id="6_vy0et"]
+[ext_resource type="Resource" uid="uid://dqimonyx3vxx2" path="res://Scripts/Resources/jam_track.tres" id="7_sqb0o"]
+[ext_resource type="Resource" uid="uid://uo6o1r2ld7io" path="res://Scripts/Resources/loading_screen.tres" id="8_gji41"]
+[ext_resource type="Resource" uid="uid://bsdxco8t0lsp5" path="res://Scripts/Resources/extraction_accelerator_gizmo.tres" id="9_5smqc"]
+[ext_resource type="Resource" uid="uid://bq55858o4o6ph" path="res://Scripts/Resources/portable_extractor_gizmo.tres" id="10_mo8cs"]
+[ext_resource type="Resource" uid="uid://dadtbmhmjhj4x" path="res://Scripts/Resources/golden_firework_gizmo.tres" id="11_nnpbk"]
+[ext_resource type="Resource" uid="uid://c528nqux1x4jo" path="res://Scripts/Resources/sprite_locator_gizmo.tres" id="12_xl7p6"]
+[ext_resource type="Resource" uid="uid://diw3sb336c8bl" path="res://Scripts/Resources/lucky_locator_gizmo.tres" id="13_yxhj1"]
+[ext_resource type="Resource" uid="uid://cijtkw17lfff" path="res://Scripts/Resources/nothing.tres" id="14_xsmcn"]
+
+[node name="Node2D" type="Node2D" unique_id=1170416590]
+script = ExtResource("1_yjs1f")
+treasure_list = Array[ExtResource("1_mhtsl")]([ExtResource("3_vyw1f"), ExtResource("4_cvvdq"), ExtResource("5_m52p7"), ExtResource("6_vy0et"), ExtResource("7_sqb0o"), ExtResource("8_gji41"), ExtResource("9_5smqc"), ExtResource("10_mo8cs"), ExtResource("11_nnpbk"), ExtResource("12_xl7p6"), ExtResource("13_yxhj1"), ExtResource("14_xsmcn")])
+
+[node name="Control" type="Control" parent="." unique_id=1086874497]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 646.0
+
+[node name="Button" type="Button" parent="Control" unique_id=511803290]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -44.0
+offset_right = 157.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press to try your odds"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=711016124]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 173.0
+offset_right = 788.0
+offset_bottom = 248.0
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 16
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
+bbcode_enabled = true
+horizontal_alignment = 1
+
+[node name="Counter" type="Label" parent="Control" unique_id=359514732]
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 25
+
+[node name="Checklist" type="RichTextLabel" parent="Control" unique_id=1302492655]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 116.0
+offset_right = 397.0
+offset_bottom = 430.0
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

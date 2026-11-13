@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="base_treasure" format=3 uid="uid://bgq5a60oefqil"]
+
+[ext_resource type="Script" uid="uid://bwhiov8vpxokw" path="res://Scripts/Resources/base_treasure.gd" id="1_ltmf6"]
+
+[resource]
+script = ExtResource("1_ltmf6")
+Name = "Golden Skin"
+metadata/_custom_type_script = "uid://bwhiov8vpxokw"

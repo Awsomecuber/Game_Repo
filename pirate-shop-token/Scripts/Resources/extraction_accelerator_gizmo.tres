@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="base_treasure" format=3 uid="uid://bsdxco8t0lsp5"]
+
+[ext_resource type="Script" uid="uid://bwhiov8vpxokw" path="res://Scripts/Resources/base_treasure.gd" id="1_t74h6"]
+
+[resource]
+script = ExtResource("1_t74h6")
+Name = "Extraction Accelerator Gizmo"
+metadata/_custom_type_script = "uid://bwhiov8vpxokw"
